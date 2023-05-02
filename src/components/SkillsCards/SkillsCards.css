@@ -1,0 +1,34 @@
+.skills-main {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.skills-main h1 {
+  margin: 20px 0 5px;
+}
+
+.front-end-skills-container,
+.back-end-skills-container,
+.other-skills-container {
+  display: flex;
+  gap: 20px;
+  background-color: #181818;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.other-skills-container {
+  flex-direction: column;
+  gap: 0;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #252525;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 3px;
+}
