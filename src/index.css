@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
   margin: 0;
@@ -14,7 +20,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
   background-color: #040404;
-  color: #fff;
+  color: #fafafa;
   position: relative;
   background: transparent;
 }
@@ -22,8 +28,8 @@ body {
 body::before {
   content: "";
   position: fixed;
-  /* background: #040404 url("./img/bg.jpg") top right no-repeat; */
   background-color: rgb(15, 12, 12);
+  color: #fafafa;
   background-size: cover;
   left: 0;
   right: 0;
@@ -39,7 +45,7 @@ body::before {
 }
 
 
-a {
+/* a {
   color: #3498DB;
   text-decoration: none;
 }
@@ -47,7 +53,7 @@ a {
 a:hover {
   color: #3498DB;
   text-decoration: none;
-}
+} */
 
 h1,
 h2,
