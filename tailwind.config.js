@@ -12,6 +12,9 @@ module.exports = {
     borderRadius: {
       "middle": ["50%"]
     },
+    height: {
+      'line-title': '2px',
+    },
     extend: {},
   },
   variants: {
