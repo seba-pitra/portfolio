@@ -8,7 +8,7 @@ const About = () => {
       <div className=" w-4/5 max-[500px]:w-full mt-0 mb-0 ml-auto mr-auto">
         <h2 
         className=" text-lg font-medium p-0 m-0 tracking-wide
-        uppercase text-gray-400 after:w-32 after:h-line-title after:inline-block after:bg-blue-500 
+        uppercase text-gray-400 after:w-32 after:h-line-title after:inline-block after:bg-blue-400 
         after:mt-1 after:mb-1 after:ml-1 after:mr-1  " >
           About
         </h2>
@@ -17,7 +17,7 @@ const About = () => {
         <div className="flex justify-around mb-16 w-full gap-10 items-center max-md:flex-col">
           <img src={profile} className="max-h-72 rounded-middle max-lg:max-h-60" alt="profile_picture" />
           <div className="content">
-            <h3 className=" font-bold text-2xl text-blue-400">Full Stack Web Developer</h3>
+            <h3 className=" font-bold text-2xl text-blue-400 mb-3">Full Stack Web Developer</h3>
             <p className=" max-w-3xl ">
               I am a Full Stack Developer focused on creating clean and high-quality code. I consider myself a highly proactive and 
               collaborative person, capable of working effectively in a team to meet project goals and exceed client expectations.
