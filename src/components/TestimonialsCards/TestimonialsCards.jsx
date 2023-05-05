@@ -1,13 +1,16 @@
-import React from "react";
+import { A11y }        from 'swiper';
+import { EffectFade }  from 'swiper';
+import { Navigation }  from 'swiper';
+import { Pagination }  from 'swiper';
+import   React         from "react";
+import { Scrollbar }   from 'swiper';
+import { Swiper }      from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectFade, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-
 import "./TestimonialsCards.css"
 
 import testimonial1 from "../../img/testimonials-1.jpg";
@@ -17,8 +20,6 @@ import testimonial4 from "../../img/testimonials-4.jpg";
 import testimonial5 from "../../img/testimonials-5.jpg";
 
 const TestimonialsCards = () => {
-
-
   return (
     <div>
       <h2
