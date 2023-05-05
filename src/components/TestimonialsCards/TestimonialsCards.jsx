@@ -41,63 +41,64 @@ const TestimonialsCards = () => {
         navigation={{
           nextEl: "none",
           prevEl: 'none',
-        }}
-      >
-        <SwiperSlide>
-          <div className="h-24 w-80">
-            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur.
-            </p>
-            <div className="flex">
-              <img src={testimonial1} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2" />
-              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
-            </div>
-          </div> 
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="h-24 w-80">
-            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur.
-            </p>
-            <div className="flex">
-              <img src={testimonial2} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2" />
-              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
-            </div>
-          </div> 
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="h-24 w-80">
-            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur.
-            </p>
-            <div className="flex">
-              <img src={testimonial3} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2" />
-              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
-            </div>
-          </div> 
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="h-24 w-80">
-            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur.
-            </p>
-            <div className="flex">
-              <img src={testimonial4} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2" />
-              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
-            </div>
-          </div> 
-        </SwiperSlide>
+        }} 
+        className=' w-4/5 mt-0 mb-0 ml-auto mr-auto '>
         
         <SwiperSlide>
-          <div className="h-24 w-80">
-            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur.
+          <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
+            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur."
             </p>
             <div className="flex">
-              <img src={testimonial5} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2" />
+              <img src={testimonial1} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
+              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
+            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur."
+            </p>
+            <div className="flex">
+              <img src={testimonial2} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
+              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
+            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur."
+            </p>
+            <div className="flex">
+              <img src={testimonial4} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
+              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
+            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur."
+            </p>
+            <div className="flex">
+              <img src={testimonial3} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
+              <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
+            </div>
+          </div> 
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
+            <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
+              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur."
+            </p>
+            <div className="flex">
+              <img src={testimonial5} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
               <h1 className=" ml-2 mt-2">Ceo & Founder at CONIN</h1>
             </div>
           </div> 
