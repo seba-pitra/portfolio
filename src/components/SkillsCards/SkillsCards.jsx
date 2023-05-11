@@ -1,4 +1,34 @@
+import { useEffect } from "react";
+import { useRef }    from "react";
+
 const SkillsCards = () => {
+  const frontSkillsRef = useRef(null);
+  const backSkillsRef  = useRef(null);
+  const toolsSkillsRef = useRef(null);
+
+  const handleScroll = () => {
+    const backSkillsElement  = backSkillsRef.current;
+    const frontSkillsElement = frontSkillsRef.current;
+    const toolSkillsElement  = toolsSkillsRef.current;
+
+    if (frontSkillsElement && frontSkillsElement.getBoundingClientRect().top < window.innerHeight) {
+      frontSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80 opacity-100 duration-[0.7s] ease-in-out" ;
+    }
+    if (backSkillsElement && backSkillsElement.getBoundingClientRect().top < window.innerHeight) {
+      backSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.3s] ease-in-out" ;
+    }
+    if (toolSkillsElement && toolSkillsElement.getBoundingClientRect().top < window.innerHeight) {
+      toolSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.8s] ease-in-out" ;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       <div>
@@ -10,9 +40,9 @@ const SkillsCards = () => {
         </h2>
       </div>
 
-      <div className="flex justify-evenly flex-wrap  gap-4 mb-16 mt-3 max-[565px]:flex max-[565px]:flex-col max-[824px]:items-center max-[824px]:mt-8">
+      <div  className=" flex justify-evenly flex-wrap  gap-4 mb-16 mt-3 max-[565px]:flex max-[565px]:flex-col max-[824px]:items-center max-[824px]:mt-8">
         {/* FRONT-END */}
-        <div className="max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80">
+        <div ref={frontSkillsRef} className=" translate-y-2  opacity-0 max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80">
           <h1 className=" text-2xl mb-3 max-[500px]:text-center">Front End</h1>
           <div className="flex gap-3 bg-neutral-900 p-4 rounded max-[500px]:p-4 max-[500px]:flex-col max-[500px]:items-center">
             <div>
@@ -191,7 +221,7 @@ const SkillsCards = () => {
         </div>
 
         {/* BACK-END */}
-        <div className="max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10">
+        <div ref={backSkillsRef} className="opacity-0 translate-y-2 ">
           <h1 className=" text-2xl mb-3 max-[500px]:text-center">Back End</h1>
           <div  className="flex gap-3 bg-neutral-900 p-4 rounded max-[500px]:p-4 max-[500px]:flex-col max-[500px]:items-center">
             <div>
@@ -363,7 +393,7 @@ const SkillsCards = () => {
         </div>
 
         {/* OTHERS */}
-        <div className="max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10">
+        <div ref={toolsSkillsRef} className="opacity-0 translate-y-2 ">
           <h1 className="text-2xl mb-3 max-[500px]:text-center">Others</h1>
           <div className="flex flex-col bg-neutral-900 p-4 rounded max-[500px]:p-4 max-[500px]:items-center">
             <div className="flex items-center w-44 gap-2 text-lg bg-neutral-800 p-4 mt-2 mb-2 rounded-r-skill-card max-[565px]:w-40 max-[565px]:gap-2 max-[500px]:w-64 max-[500px]:flex max-[500px]:justify-start max-[500px]:text-2xl">

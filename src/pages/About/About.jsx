@@ -1,8 +1,36 @@
 import profile           from "../../img/profile.jpg"
 import SkillsCards       from "../../components/SkillsCards/SkillsCards";
 import TestimonialsCards from "../../components/TestimonialsCards/TestimonialsCards";
+import { useEffect, useRef } from "react";
 
 const About = () => {
+  const aboutmeDivRef = useRef(null);
+  const skillsDivRef = useRef(null);
+  const testimonialsRef = useRef(null);
+
+  const handleScroll = () => {
+    const aboutmeElement = aboutmeDivRef.current;
+    const skillsElement  = skillsDivRef.current;
+    const testimonialsElement = testimonialsRef.current;
+
+    if (aboutmeElement && aboutmeElement.getBoundingClientRect().top < window.innerHeight) {
+      aboutmeElement.className = "flex justify-around mb-16 w-full gap-10 items-center max-md:flex-col  transition-opacity duration-[1s] ease-in-out" ;
+    }
+    if (skillsElement && skillsElement.getBoundingClientRect().top < window.innerHeight) {
+      skillsElement.className = "transition-opacity opacity-100 duration-[1s] ease-in-out" ;
+    }
+    if (testimonialsElement && testimonialsElement.getBoundingClientRect().top < window.innerHeight) {
+      testimonialsElement.className = "transition-opacity opacity-100 duration-[1.5s] ease-in-out" ;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="mt-10 pt-7 pb-7 text-stone-300 text-start max-sm:p-6">
       <div className=" w-4/5 max-[500px]:w-full mt-0 mb-0 ml-auto mr-auto">
@@ -14,7 +42,7 @@ const About = () => {
         </h2>
         <p className=" mt-2 mb-10 ml-0 mr-0 text-4xl font-bold uppercase text-slate-300">Learn more about me</p>
 
-        <div className="flex justify-around mb-16 w-full gap-10 items-center max-md:flex-col">
+        <div className="flex justify-around mb-16 w-full gap-10 items-center max-md:flex-col translate-y-2 duration-[1s] ease-in-out" ref={aboutmeDivRef}>
           <img src={profile} className="max-h-72 rounded-middle max-lg:max-h-60" alt="profile_picture" />
           <div className="content">
             <h3 className=" font-bold text-2xl text-blue-400 mb-3">Full Stack Web Developer</h3>
@@ -30,9 +58,13 @@ const About = () => {
           </div>
         </div>
 
-        <SkillsCards />
+        <div ref={skillsDivRef} className="translate-y-2 opacity-0">
+          <SkillsCards />
+        </div>
 
-        <TestimonialsCards />
+        <div ref={testimonialsRef} className="translate-y-2 opacity-0">
+          <TestimonialsCards />
+        </div>
       </div>
     </section>
   )
