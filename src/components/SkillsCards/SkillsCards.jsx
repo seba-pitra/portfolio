@@ -1,4 +1,3 @@
-
 const SkillsCards = () => {
   return (
     <div>
