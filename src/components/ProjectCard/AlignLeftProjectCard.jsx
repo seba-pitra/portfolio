@@ -16,7 +16,9 @@ const AlignLeftProjectCard = ({ title, isFirstItem, image, description, techStac
   useEffect(() => {
     setTimeout(() => {
       if(isFirstItem) {
-        cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
+        if(cardRef.current) {
+          cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
+        } 
       } else {
         window.addEventListener("scroll", handleScroll);
         return () => {
