@@ -1,12 +1,28 @@
-
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
 import { Link }           from "react-router-dom";
+import { useEffect }      from "react";
+import { useRef }         from "react";
 
 const AlignLeftProjectCard = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
+  const cardRef = useRef(null);
+
+  const handleScroll = () => {
+    if (cardRef.current && cardRef.current.getBoundingClientRect().top < window.innerHeight) {
+      cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   return (
-    <div className=" max-w-3xl -ml-[150px] max-lg:-ml-0 transition-animationLineBefore duration-300">
-      <div className="flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
+    <div className="  max-w-3xl -ml-[150px] max-lg:-ml-0 transition-opacity opacity-100 duration-[1s] ease-in-out">
+      <div ref={cardRef} className="opacity-0 translate-y-2 flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
         
         <div className="w-64 max-lg:w-3/4 relative text-start flex flex-col items-start max-lg:bg-neutral-900 max-lg:p-10 max-md:p-5 max-lg:text-start max-lg:items-start max-md:max-h-fit">
           <div className="absolute max-lg:static">
