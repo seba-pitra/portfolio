@@ -4,7 +4,7 @@ import { Link }           from "react-router-dom";
 import { useEffect }      from "react";
 import { useRef }         from "react";
 
-const AlignLeftProjectCard = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
+const AlignLeftProjectCard = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
   const cardRef = useRef(null);
 
   const handleScroll = () => {
@@ -14,11 +14,17 @@ const AlignLeftProjectCard = ({ title, image, description, techStack, urlGithub,
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    setTimeout(() => {
+      if(isFirstItem) {
+        cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
+      } else {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }
+    }, 1000)
+  }, [isFirstItem]);
   
   return (
     <div className="  max-w-3xl -ml-[150px] max-lg:-ml-0 transition-opacity opacity-100 duration-[1s] ease-in-out">

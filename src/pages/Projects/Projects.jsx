@@ -21,6 +21,7 @@ const Projects = () => {
                   index % 2 === 0 ? 
                   <AlignLeftProjectCard 
                   key={index}
+                  isFirstItem={index === 0}
                   title={project.title} 
                   image={project.image}
                   description={project.description} 
