@@ -1,6 +1,7 @@
 
-import { Github, BoxArrowUpRight} from "react-bootstrap-icons"
-import { Link } from "react-router-dom";
+import { BoxArrowUpRight} from "react-bootstrap-icons"
+import { Github }         from "react-bootstrap-icons"
+import { Link }           from "react-router-dom";
 
 const AlignLeftProjectCard = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
   return (

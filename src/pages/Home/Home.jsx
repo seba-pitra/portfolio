@@ -1,5 +1,5 @@
-import { Github } from "react-bootstrap-icons"
-import { Link } from "react-router-dom";
+import { Github }   from "react-bootstrap-icons"
+import { Link }     from "react-router-dom";
 import { Linkedin } from "react-bootstrap-icons"
 
 const Home = () => {

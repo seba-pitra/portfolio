@@ -1,5 +1,5 @@
-import profile from "../../img/profile.jpg"
-import SkillsCards from "../../components/SkillsCards/SkillsCards";
+import profile           from "../../img/profile.jpg"
+import SkillsCards       from "../../components/SkillsCards/SkillsCards";
 import TestimonialsCards from "../../components/TestimonialsCards/TestimonialsCards";
 
 const About = () => {
