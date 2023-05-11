@@ -1,9 +1,12 @@
+import { Github }        from "react-bootstrap-icons"
+import NavBar            from "../../components/NavBar/NavBar";
+import { Link }          from "react-router-dom";
+import { Linkedin }      from "react-bootstrap-icons"
 import profile           from "../../img/profile.jpg"
 import SkillsCards       from "../../components/SkillsCards/SkillsCards";
 import TestimonialsCards from "../../components/TestimonialsCards/TestimonialsCards";
-import { useEffect } from "react";
-import { useRef } from "react";
-import NavBar from "../../components/NavBar/NavBar";
+import { useEffect }     from "react";
+import { useRef }        from "react";
 
 const About = () => {
   const aboutmeDivRef = useRef(null);
@@ -64,6 +67,14 @@ const About = () => {
                 allowing me to deliver high-quality results in a short time frame. 
                 I am always willing to face new challenges and contribute to the success of the organization where I collaborate.
               </p>
+              <div className="flex mt-3 -ml-4 gap-3 p-3">
+                <Link to={"https://www.linkedin.com/in/sebasti%C3%A1n-pitra-97b5b7248/"} target="_blank" className="bg-gray-800 p-3 rounded-middle hover:bg-gray-700 transition-animationLineBefore duration-300"> 
+                  <Linkedin color="rgb(59 130 246)" size={"20px"}/> 
+                </Link >
+                <Link to={"https://github.com/seba-pitra"} target="_blank" className="bg-gray-800 p-3 rounded-middle hover:bg-gray-700 transition-animationLineBefore duration-300"> 
+                  <Github color="rgb(59 130 246)" size={"20px"} /> 
+                </Link>
+               </div>
             </div>
           </div>
 
