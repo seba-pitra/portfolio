@@ -1,7 +1,7 @@
 import coninImage      from "../img/conin.jpg"
 import dogBreedsImage  from "../img/dog-breeds.jpg"
 import portamorImage   from "../img/portamor.jpg"
-import nonFungibleTown from "../img/nonFungibleTown.jpg"
+import nonFungibleTownImage from "../img/nonFungibleTown.jpg"
 
 export const projects =  [
   {
@@ -20,7 +20,7 @@ export const projects =  [
   },
   {
     title:       "Non Fungible Town",
-    image:       nonFungibleTown,
+    image:       nonFungibleTownImage,
     description: "An NFT Ecommerce platform that provides seamless opportunities for buying and selling NFTs using cryptocurrencies as well as cash payments.", 
     techStack:   ["Javascript", "React", "Metamask", "NodeJS", "Firebase"],
     urlGithub:   "https://github.com/seba-pitra/e-commerce-NFT",

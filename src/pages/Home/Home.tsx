@@ -3,6 +3,7 @@ import { Link }      from "react-router-dom";
 import { Linkedin }  from "react-bootstrap-icons"
 import { useEffect } from "react";
 import { useRef }    from "react";
+import React from "react";
 
 const Home = () => {
   const presentationRef = useRef(null);

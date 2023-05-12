@@ -3,6 +3,7 @@ import { Github }         from "react-bootstrap-icons"
 import { Link }           from "react-router-dom";
 import { useEffect }      from "react";
 import { useRef }         from "react";
+import React from "react";
 
 const AlignLeftProjectCard = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
   const cardRef = useRef(null);
