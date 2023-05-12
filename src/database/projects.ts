@@ -2,8 +2,9 @@ import coninImage      from "../img/conin.jpg"
 import dogBreedsImage  from "../img/dog-breeds.jpg"
 import portamorImage   from "../img/portamor.jpg"
 import nonFungibleTownImage from "../img/nonFungibleTown.jpg"
+import { IProject } from "../types/databaseTypes"
 
-export const projects =  [
+export const projects: Array<IProject> =  [
   {
     title:       "CONIN SMT",
     image:        coninImage,
