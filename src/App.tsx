@@ -8,7 +8,7 @@ import Projects          from './pages/Projects/Projects';
 import { Route }         from 'react-router-dom';
 import { Routes }        from 'react-router-dom';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>

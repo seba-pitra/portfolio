@@ -9,9 +9,9 @@ import { useEffect }     from "react";
 import { useRef }        from "react";
 import React from "react";
 
-const About = () => {
-  const aboutmeDivRef = useRef<HTMLDivElement>(null);
-  const skillsDivRef = useRef<HTMLDivElement>(null);
+const About:React.FC = () => {
+  const aboutmeDivRef   = useRef<HTMLDivElement>(null);
+  const skillsDivRef    = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
 
   const handleOpacity = () => {
@@ -36,7 +36,9 @@ const About = () => {
 
   useEffect(() => {
     handleOpacity()
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

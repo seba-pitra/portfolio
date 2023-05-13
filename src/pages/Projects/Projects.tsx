@@ -4,7 +4,7 @@ import { AlignLeftProjectCard } from "../../components/ProjectCard";
 import { AlignRightProjectCard} from "../../components/ProjectCard";
 import { projects }             from "../../database";
 
-const Projects = () => {
+const Projects: React.FC = () => {
 
   return (
     <>
