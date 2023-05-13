@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import { useRef }    from "react";
 import { IHandlerAvoid } from "../../types/handlersTypes";
+import  React            from "react";
+import { useEffect }     from "react";
+import { useRef }        from "react";
 
 const SkillsCards: React.FC = () => {
   const frontSkillsRef = useRef<HTMLDivElement>(null);

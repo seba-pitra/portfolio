@@ -4,7 +4,7 @@ import { Link }          from "react-router-dom";
 import { Linkedin }      from "react-bootstrap-icons"
 import profile           from "../../img/profile.jpg"
 import SkillsCards       from "../../components/SkillsCards/SkillsCards";
-import TestimonialsCards from "../../components/TestimonialsCards/TestimonialsCards";
+import SwiperTestimonials from "../../components/SwiperTestimonials/SwiperTestimonial"; 
 import { useEffect }     from "react";
 import { useRef }        from "react";
 import React from "react";
@@ -86,7 +86,7 @@ const About:React.FC = () => {
           </div>
 
           <div ref={testimonialsRef} className="translate-y-2 opacity-0">
-            <TestimonialsCards />
+            <SwiperTestimonials />
           </div>
         </div>
       </section>
