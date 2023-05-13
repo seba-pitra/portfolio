@@ -1,15 +1,10 @@
 import React from 'react';
-import { Document, Page } from 'react-pdf';
+import CVPDF from "../../assets/PDF/CV-sebastian-pitra.pdf"
 
-const PDFViewer: React.FC = () => {
+const PDFResume: React.FC = () => {
   return (
-    <>
-      <h2>PDF Viewer</h2>
-      <Document file="/ruta/al/archivo.pdf">
-        <Page pageNumber={1} />
-      </Document>
-    </>
-  );
+    <embed src={CVPDF} type="application/pdf" className='h-[720px] w-full absolute top-0 left-0 overflow-hidden' />
+  )
 };
 
-export default PDFViewer;
+export default PDFResume;

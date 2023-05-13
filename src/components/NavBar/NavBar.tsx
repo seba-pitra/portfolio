@@ -73,7 +73,7 @@ const NavBar: React.FC = () => {
             <Link className="text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
             before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
             before:bg-blue-400 before:transition-animationLineBefore 
-            hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/resume"}>
+            hover:before:visible hover:before:w-6 hover:text-neutral-50" target="_blank" to={"/resume"}>
               Resume
             </Link>
           </li>
