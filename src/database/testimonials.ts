@@ -3,8 +3,9 @@ import testimonial3 from "../img/testimonials-3.jpg";
 import testimonial4 from "../img/lucas.png";
 import ayrtonImage from "../img/ayrton.jpg"
 import franImage    from "../img/fran.png";
+import { ITestimonial } from "../types/databaseTypes";
 
-export const testimonials =  [
+export const testimonials: Array<ITestimonial> =  [
   {
     name: "Lorem Ipsum",
     comment:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur",
@@ -25,8 +26,7 @@ export const testimonials =  [
   },
   {
     name: "Tomas Goyret",
-    comment:"Sebas is amazing! We work together developing an app for a foundation that has a huge impact. His incorporation into the dev team was key in giving development a boost. I have to highlight their commitment, willingness to solve problems at any time and their technical quality." ,
- // It was a real pleasure to work with him and I hope we continue to fully with this.",
+    comment:"Sebas is amazing! We work together developing an app for a foundation that has a huge impact. His incorporation into the dev team was key in giving development a boost. I have to highlight their commitment, willingness to solve problems at any time and their technical quality. It was a real pleasure to work with him and I hope we continue to fully with this.",
     role: "Software Developer",
     profilePicture: testimonial2
   },

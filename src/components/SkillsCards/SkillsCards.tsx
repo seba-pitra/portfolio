@@ -1,15 +1,17 @@
+import React from "react";
 import { useEffect } from "react";
 import { useRef }    from "react";
+import { IHandlerAvoid } from "../../types/handlersTypes";
 
-const SkillsCards = () => {
-  const frontSkillsRef = useRef(null);
-  const backSkillsRef  = useRef(null);
-  const toolsSkillsRef = useRef(null);
+const SkillsCards: React.FC = () => {
+  const frontSkillsRef = useRef<HTMLDivElement>(null);
+  const backSkillsRef  = useRef<HTMLDivElement>(null);
+  const toolsSkillsRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    const backSkillsElement  = backSkillsRef.current;
-    const frontSkillsElement = frontSkillsRef.current;
-    const toolSkillsElement  = toolsSkillsRef.current;
+  const handleScroll: IHandlerAvoid = () => {
+    const backSkillsElement :HTMLDivElement  = backSkillsRef.current;
+    const frontSkillsElement:HTMLDivElement = frontSkillsRef.current;
+    const toolSkillsElement :HTMLDivElement  = toolsSkillsRef.current;
 
     if (frontSkillsElement && frontSkillsElement.getBoundingClientRect().top < window.innerHeight) {
       frontSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80 opacity-100 duration-[0.7s] ease-in-out" ;

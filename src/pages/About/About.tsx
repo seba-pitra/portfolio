@@ -7,11 +7,12 @@ import SkillsCards       from "../../components/SkillsCards/SkillsCards";
 import TestimonialsCards from "../../components/TestimonialsCards/TestimonialsCards";
 import { useEffect }     from "react";
 import { useRef }        from "react";
+import React from "react";
 
-const About = () => {
-  const aboutmeDivRef = useRef(null);
-  const skillsDivRef = useRef(null);
-  const testimonialsRef = useRef(null);
+const About:React.FC = () => {
+  const aboutmeDivRef   = useRef<HTMLDivElement>(null);
+  const skillsDivRef    = useRef<HTMLDivElement>(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
 
   const handleOpacity = () => {
     setTimeout(() => {
@@ -35,7 +36,9 @@ const About = () => {
 
   useEffect(() => {
     handleOpacity()
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

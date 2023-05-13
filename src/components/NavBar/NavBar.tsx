@@ -1,13 +1,16 @@
-import { useEffect, useRef } from "react";
-import { Link }       from "react-router-dom";
+import { IHandlerAvoid }   from "../../types/handlersTypes";
+import { Link }            from "react-router-dom";
+import  React              from "react";
+import { useEffect }       from "react";
+import { useRef }          from "react";
 
-const NavBar = () => {
-  const aboutRef    = useRef(null);
-  const contactRef  = useRef(null);
-  const homeRef     = useRef(null);
-  const projectsRef = useRef(null);
+const NavBar: React.FC = () => {
+  const aboutRef    = useRef<HTMLLIElement>(null);
+  const contactRef  = useRef<HTMLLIElement>(null);
+  const homeRef     = useRef<HTMLLIElement>(null);
+  const projectsRef = useRef<HTMLLIElement>(null);
 
-  const handleOpacity = () => {
+  const handleOpacity: IHandlerAvoid = () => {
     if(homeRef.current) {
       homeRef.current.className = `relative ml-8 opacity-100 duration-[0.5s] ease-in-out`;
     }

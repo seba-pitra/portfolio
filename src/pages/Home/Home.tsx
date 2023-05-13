@@ -3,12 +3,13 @@ import { Link }      from "react-router-dom";
 import { Linkedin }  from "react-bootstrap-icons"
 import { useEffect } from "react";
 import { useRef }    from "react";
+import React from "react";
 
-const Home = () => {
-  const presentationRef = useRef(null);
-  const nameRef  = useRef(null);
-  const whoAmIRef = useRef(null);
-  const socialMediaRef = useRef(null);
+const Home: React.FC = () => {
+  const presentationRef = useRef<HTMLDivElement>(null);
+  const nameRef  = useRef<HTMLDivElement>(null);
+  const whoAmIRef = useRef<HTMLDivElement>(null);
+  const socialMediaRef = useRef<HTMLDivElement>(null);
 
   const handleOpacity = () => {
     const presentationElement = presentationRef.current;

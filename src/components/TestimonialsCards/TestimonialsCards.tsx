@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "./TestimonialsCards.css"
 
-const TestimonialsCards = () => {
+const TestimonialsCards: React.FC = () => {
 
   return (
     <div>
