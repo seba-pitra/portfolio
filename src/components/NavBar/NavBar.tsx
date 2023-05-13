@@ -9,6 +9,7 @@ const NavBar: React.FC = () => {
   const contactRef  = useRef<HTMLLIElement>(null);
   const homeRef     = useRef<HTMLLIElement>(null);
   const projectsRef = useRef<HTMLLIElement>(null);
+  const resumeRef   = useRef<HTMLLIElement>(null);
 
   const handleOpacity: IHandlerAvoid = () => {
     if(homeRef.current) {
@@ -22,6 +23,9 @@ const NavBar: React.FC = () => {
     } 
     if(contactRef.current) {
       contactRef.current.className  = `relative ml-8 opacity-100 duration-[2s] ease-in-out`;
+    } 
+    if(resumeRef.current) {
+      resumeRef.current.className  = `relative ml-8 opacity-100 duration-[2s] ease-in-out`;
     } 
   }
 
@@ -63,6 +67,14 @@ const NavBar: React.FC = () => {
             before:bg-blue-400 before:transition-animationLineBefore 
             hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/contact"}>
               Contact
+            </Link>
+          </li>
+          <li ref={resumeRef} className="relative ml-8 opacity-0 translate-y-4">
+            <Link className="text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
+            before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
+            before:bg-blue-400 before:transition-animationLineBefore 
+            hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/resume"}>
+              Resume
             </Link>
           </li>
         </ul>

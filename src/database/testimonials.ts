@@ -1,8 +1,8 @@
-import testimonial2 from "../img/tomas.jpg";
-import testimonial3 from "../img/testimonials-3.jpg";
-import testimonial4 from "../img/lucas.png";
-import ayrtonImage from "../img/ayrton.jpg"
-import franImage    from "../img/fran.png";
+import testimonial2 from "../assets/img/tomas.jpg";
+import testimonial3 from "../assets/img/testimonials-3.jpg";
+import testimonial4 from "../assets/img/lucas.png";
+import ayrtonImage from "../assets/img/ayrton.jpg"
+import franImage    from "../assets/img/fran.png";
 import { ITestimonial } from "../types/databaseTypes";
 
 export const testimonials: Array<ITestimonial> =  [

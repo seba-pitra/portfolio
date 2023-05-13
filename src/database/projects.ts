@@ -1,7 +1,7 @@
-import coninImage      from "../img/conin.jpg"
-import dogBreedsImage  from "../img/dog-breeds.jpg"
-import portamorImage   from "../img/portamor.jpg"
-import nonFungibleTownImage from "../img/nonFungibleTown.jpg"
+import coninImage      from "../assets/img/conin.jpg"
+import dogBreedsImage  from "../assets/img/dog-breeds.jpg"
+import portamorImage   from "../assets/img/portamor.jpg"
+import nonFungibleTownImage from "../assets/img/nonFungibleTown.jpg"
 import { IProject } from "../types/databaseTypes"
 
 export const projects: Array<IProject> =  [

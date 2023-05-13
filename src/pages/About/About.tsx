@@ -2,7 +2,7 @@ import { Github }        from "react-bootstrap-icons"
 import NavBar            from "../../components/NavBar/NavBar";
 import { Link }          from "react-router-dom";
 import { Linkedin }      from "react-bootstrap-icons"
-import profile           from "../../img/profile.jpg"
+import profile           from "../../assets/img/profile.jpg"
 import SkillsCards       from "../../components/SkillsCards/SkillsCards";
 import SwiperTestimonials from "../../components/SwiperTestimonials/SwiperTestimonial"; 
 import { useEffect }     from "react";
