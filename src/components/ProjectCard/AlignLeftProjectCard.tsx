@@ -1,14 +1,15 @@
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
-import { IHandlerAvoid } from "../../types/handlersTypes";
+import { IHandlerAvoid }  from "../../types/handlersTypes";
+import { IProject }       from "../../types/databaseTypes";
 import { Link }           from "react-router-dom";
 import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
-import { IProject } from "../../types/databaseTypes";
 
-
-const AlignLeftProjectCard: React.FC<IProject> = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
+const AlignLeftProjectCard: React.FC<IProject> = ({ 
+  title, isFirstItem, image, description, techStack, urlGithub, urlDeploy 
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleScroll: IHandlerAvoid = () => {

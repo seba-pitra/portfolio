@@ -1,12 +1,15 @@
 
-import React from "react";
-import { useEffect, useRef } from "react";
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
+import { IProject }       from "../../types/databaseTypes";
 import { Link }           from "react-router-dom";
-import { IProject } from "../../types/databaseTypes";
+import  React             from "react";
+import { useEffect }      from "react";
+import { useRef }         from "react";
 
-const AlignRightProjectCard: React.FC<IProject> = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
+const AlignRightProjectCard: React.FC<IProject> = ({ 
+  title, image, description, techStack, urlGithub, urlDeploy 
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
