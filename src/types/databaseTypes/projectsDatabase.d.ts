@@ -3,6 +3,7 @@ export interface IProject {
   image: string;
   description: string;
   techStack: Array<string>;
+  isFirstItem?: boolean;
   urlDeploy?: string;
   urlGithub?: string;
 }

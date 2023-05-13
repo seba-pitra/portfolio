@@ -1,14 +1,17 @@
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
+import { IHandlerAvoid } from "../../types/handlersTypes";
 import { Link }           from "react-router-dom";
+import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
-import React from "react";
+import { IProject } from "../../types/databaseTypes";
 
-const AlignLeftProjectCard = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
-  const cardRef = useRef(null);
 
-  const handleScroll = () => {
+const AlignLeftProjectCard: React.FC<IProject> = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll: IHandlerAvoid = () => {
     if (cardRef.current && cardRef.current.getBoundingClientRect().top < window.innerHeight) {
       cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
     }
@@ -16,17 +19,17 @@ const AlignLeftProjectCard = ({ title, isFirstItem, image, description, techStac
 
   useEffect(() => {
     setTimeout(() => {
-      if(isFirstItem) {
-        if(cardRef.current) {
-          cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
-        } 
-      } else {
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
+      if(isFirstItem && cardRef.current) {
+        cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
+        return; 
       }
+      
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }, 1000)
+
   }, [isFirstItem]);
   
   return (

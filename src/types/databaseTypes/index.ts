@@ -1,2 +1,2 @@
 export { IProject } from "./projectsDatabase"
-export { ITestimonial } from "./testimonials"
+export { ITestimonial } from "./testimonialsDatabase"

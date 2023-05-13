@@ -4,9 +4,10 @@ import { useEffect, useRef } from "react";
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
 import { Link }           from "react-router-dom";
+import { IProject } from "../../types/databaseTypes";
 
-const AlignRightProjectCard = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
-  const cardRef = useRef(null);
+const AlignRightProjectCard: React.FC<IProject> = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     if (cardRef.current && cardRef.current.getBoundingClientRect().top < window.innerHeight) {
