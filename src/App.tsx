@@ -8,11 +8,16 @@ import React             from 'react';
 import { Route }         from 'react-router-dom';
 import { Routes }        from 'react-router-dom';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/'         element={<Home />} />
           <Route path='/about'    element={<About />} />
@@ -21,6 +26,7 @@ const App: React.FC = () => {
           <Route path='/contact'  element={<Contact />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }
