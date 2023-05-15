@@ -1,4 +1,3 @@
-import { IHandlerAvoid } from "../../types/handlersTypes";
 import  React            from "react";
 import { useEffect }     from "react";
 import { useRef }        from "react";
@@ -8,7 +7,7 @@ const SkillsCards: React.FC = () => {
   const backSkillsRef  = useRef<HTMLDivElement>(null);
   const toolsSkillsRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll: IHandlerAvoid = () => {
+  const handleScroll = () => {
     const backSkillsElement :HTMLDivElement  = backSkillsRef.current;
     const frontSkillsElement:HTMLDivElement = frontSkillsRef.current;
     const toolSkillsElement :HTMLDivElement  = toolsSkillsRef.current;

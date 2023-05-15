@@ -3,7 +3,13 @@ import testimonial3 from "../assets/img/testimonials-3.jpg";
 import testimonial4 from "../assets/img/lucas.png";
 import ayrtonImage from "../assets/img/ayrton.jpg"
 import franImage    from "../assets/img/fran.png";
-import { ITestimonial } from "../types/databaseTypes";
+
+export interface ITestimonial {
+  name: string;
+  comment: string;
+  role: string;
+  profilePicture: string;
+}
 
 export const testimonials: Array<ITestimonial> =  [
   {

@@ -20,7 +20,7 @@ body {
 body {
   font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
-  background-color: #040404;
+  background-color: #ededed;
   color: #fafafa;
   position: relative;
   background: transparent;
@@ -29,7 +29,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background-color: rgb(15, 12, 12);
+  background-color: #0b0b0b;
   color: #fafafa;
   background-size: cover;
   left: 0;
@@ -44,17 +44,6 @@ body::before {
     background-attachment: fixed;
   }
 }
-
-
-/* a {
-  color: #3498DB;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #3498DB;
-  text-decoration: none;
-} */
 
 h1,
 h2,

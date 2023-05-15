@@ -1,7 +1,13 @@
 import React from "react";
-import {ITestimonial} from "../../types/databaseTypes";
 
-const TestimonialCard: React.FC<ITestimonial> = ({ name, comment, profilePicture, role }) => {
+export interface IProps {
+  name: string;
+  comment: string;
+  role: string;
+  profilePicture: string;
+}
+
+const TestimonialCard: React.FC<IProps> = ({ name, comment, profilePicture, role }) => {
   return (
     <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
       <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">

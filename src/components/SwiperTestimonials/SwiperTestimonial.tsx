@@ -8,13 +8,19 @@ import { Swiper }       from 'swiper/react';
 import { SwiperSlide }  from 'swiper/react';
 import { testimonials } from '../../database';
 import TestimonialCard from '../TestimonialsCard/TestimonialCard';
-import { ITestimonial } from '../../types/databaseTypes';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import "./SwiperTestimonials.css"
+import "./SwiperTestimonials.css";
+
+export interface ITestimonial {
+  name: string;
+  comment: string;
+  role: string;
+  profilePicture: string;
+}
 
 const SwiperTestimonials: React.FC = () => {
 

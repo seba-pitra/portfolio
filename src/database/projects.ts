@@ -2,7 +2,16 @@ import coninImage      from "../assets/img/conin.jpg"
 import dogBreedsImage  from "../assets/img/dog-breeds.jpg"
 import portamorImage   from "../assets/img/portamor.jpg"
 import nonFungibleTownImage from "../assets/img/nonFungibleTown.jpg"
-import { IProject } from "../types/databaseTypes"
+
+export interface IProject {
+  title: string;
+  image: string;
+  description: string;
+  techStack: Array<string>;
+  isFirstItem?: boolean;
+  urlDeploy?: string;
+  urlGithub?: string;
+}
 
 export const projects: Array<IProject> =  [
   {
