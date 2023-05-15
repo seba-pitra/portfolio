@@ -1,18 +1,18 @@
+import  About        from "../../components/About/About";
 import { Github }    from "react-bootstrap-icons"
 import { Link }      from "react-router-dom";
 import { Linkedin }  from "react-bootstrap-icons"
 import { useEffect } from "react";
 import { useRef }    from "react";
-import React from "react";
-import About from "../../components/About/About";
+import  React        from "react";
 
 const Home: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef    = useRef<HTMLDivElement>(null);
   const presentationRef = useRef<HTMLDivElement>(null);
-  const nameRef  = useRef<HTMLDivElement>(null);
-  const whoAmIRef = useRef<HTMLDivElement>(null);
-  const socialMediaRef = useRef<HTMLDivElement>(null);
-  const descriptionRef = useRef<HTMLDivElement>(null);
+  const nameRef         = useRef<HTMLDivElement>(null);
+  const whoAmIRef       = useRef<HTMLDivElement>(null);
+  const socialMediaRef  = useRef<HTMLDivElement>(null);
+  const descriptionRef  = useRef<HTMLDivElement>(null);
 
   const handleOpacity = () => {
     const containerlement     = containerRef.current;

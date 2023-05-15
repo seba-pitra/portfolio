@@ -1,7 +1,7 @@
-import React from "react";
 import { AlignLeftProjectCard } from "../../components/ProjectCard";
 import { AlignRightProjectCard} from "../../components/ProjectCard";
 import { projects }             from "../../database";
+import  React                   from "react";
 
 const Projects: React.FC = () => {
 

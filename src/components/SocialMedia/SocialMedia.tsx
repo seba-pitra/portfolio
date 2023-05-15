@@ -1,10 +1,10 @@
-import React from "react";
+import React            from "react";
 import { EnvelopeFill } from "react-bootstrap-icons"
-import { GeoAltFill  } from "react-bootstrap-icons"
-import { Globe } from "react-bootstrap-icons"
-import { Linkedin } from "react-bootstrap-icons"
-import { Github } from "react-bootstrap-icons"
-import { Link } from "react-router-dom"
+import { GeoAltFill  }  from "react-bootstrap-icons"
+import { Globe }        from "react-bootstrap-icons"
+import { Linkedin }     from "react-bootstrap-icons"
+import { Github }       from "react-bootstrap-icons"
+import { Link }         from "react-router-dom"
 
 const SocialMedia = () => {
   return (

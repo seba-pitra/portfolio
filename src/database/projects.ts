@@ -4,13 +4,13 @@ import portamorImage   from "../assets/img/portamor.jpg"
 import nonFungibleTownImage from "../assets/img/nonFungibleTown.jpg"
 
 export interface IProject {
-  title: string;
-  image: string;
-  description: string;
-  techStack: Array<string>;
+  title:        string;
+  image:        string;
+  description:  string;
+  techStack:    Array<string>;
   isFirstItem?: boolean;
-  urlDeploy?: string;
-  urlGithub?: string;
+  urlDeploy?:   string;
+  urlGithub?:   string;
 }
 
 export const projects: Array<IProject> =  [

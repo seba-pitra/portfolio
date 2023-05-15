@@ -1,9 +1,9 @@
 import React from "react";
 
 export interface IProps {
-  name: string;
-  comment: string;
-  role: string;
+  name:           string;
+  comment:        string;
+  role:           string;
   profilePicture: string;
 }
 

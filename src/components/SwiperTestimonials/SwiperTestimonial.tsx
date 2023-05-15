@@ -6,8 +6,8 @@ import   React          from "react";
 import { Scrollbar }    from 'swiper';
 import { Swiper }       from 'swiper/react';
 import { SwiperSlide }  from 'swiper/react';
+import TestimonialCard  from '../TestimonialsCard/TestimonialCard';
 import { testimonials } from '../../database';
-import TestimonialCard from '../TestimonialsCard/TestimonialCard';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

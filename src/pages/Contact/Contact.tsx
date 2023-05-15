@@ -1,6 +1,6 @@
-import React from "react";
-import { FC } from "react";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import { FC }      from "react";
+import React       from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
 const Contact: FC = () => {

@@ -1,7 +1,7 @@
-import { Link }          from "react-router-dom";
-import  React            from "react";
-import { useEffect }     from "react";
-import { useRef }        from "react";
+import { Link }      from "react-router-dom";
+import  React        from "react";
+import { useEffect } from "react";
+import { useRef }    from "react";
 
 const NavBar: React.FC = () => {
   const contactRef  = useRef<HTMLLIElement>(null);

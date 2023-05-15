@@ -1,12 +1,12 @@
-import React from "react";
-import { Github }        from "react-bootstrap-icons"
-import { Link }          from "react-router-dom";
-import { Linkedin }      from "react-bootstrap-icons"
-import profile           from "../../assets/img/profile.jpg"
-import SkillsCards       from "../../components/SkillsCards/SkillsCards";
+import React              from "react";
+import { Github }         from "react-bootstrap-icons"
+import { Link }           from "react-router-dom";
+import { Linkedin }       from "react-bootstrap-icons"
+import profile            from "../../assets/img/profile.jpg"
+import SkillsCards        from "../../components/SkillsCards/SkillsCards";
 import SwiperTestimonials from "../../components/SwiperTestimonials/SwiperTestimonial"; 
-import { useEffect }     from "react";
-import { useRef }        from "react";
+import { useEffect }      from "react";
+import { useRef }         from "react";
 
 const About:React.FC = () => {
   const aboutmeDivRef   = useRef<HTMLDivElement>(null);
@@ -14,8 +14,8 @@ const About:React.FC = () => {
   const testimonialsRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
-    const skillsElement  = skillsDivRef.current;
-    const testimonialsElement = testimonialsRef.current;
+    const skillsElement: HTMLDivElement       = skillsDivRef.current;
+    const testimonialsElement: HTMLDivElement = testimonialsRef.current;
 
     if(aboutmeDivRef.current) {
       aboutmeDivRef.current.className = ` duration-[1s] ease-in-out`;

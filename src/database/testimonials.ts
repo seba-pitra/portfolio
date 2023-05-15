@@ -5,9 +5,9 @@ import ayrtonImage from "../assets/img/ayrton.jpg"
 import franImage    from "../assets/img/fran.png";
 
 export interface ITestimonial {
-  name: string;
-  comment: string;
-  role: string;
+  name:           string;
+  comment:        string;
+  role:           string;
   profilePicture: string;
 }
 

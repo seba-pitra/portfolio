@@ -1,15 +1,15 @@
-import React from "react";
-import { FC } from "react";
-import { send } from "emailjs-com"
-import { useForm } from "react-hook-form"
+import React             from "react";
+import { FC }            from "react";
+import { send }          from "emailjs-com"
+import { useForm }       from "react-hook-form"
 import { SubmitHandler } from "react-hook-form"
-import { toast } from 'react-toastify';
+import { toast }         from 'react-toastify';
 
 interface IFormValues {
-  from_name: string;
+  from_name:  string;
   user_email: string;
-  subject: string;
-  message: string;
+  subject:    string;
+  message:    string;
 }
 
 const ContactForm: FC = () => {
