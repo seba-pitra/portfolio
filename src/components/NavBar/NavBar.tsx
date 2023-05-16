@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
     <nav className=" mt-9 p-0">
       <ul className=" m-0 p-0 flex justify-end w-11/12 list-none">
         <li  ref={homeRef} className="relative ml-8 opacity-0 -translate-y-4">
-          <Link className=" text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
+          <Link className=" text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
           hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/"}>
@@ -41,7 +41,7 @@ const NavBar: React.FC = () => {
           </Link>
         </li>
         <li ref={projectsRef} className="relative ml-8 opacity-0 -translate-y-4">
-          <Link className="text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
+          <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
           hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/projects"}>
@@ -49,7 +49,7 @@ const NavBar: React.FC = () => {
           </Link>
         </li>
         <li ref={contactRef} className="relative ml-8 opacity-0 -translate-y-4">
-          <Link className="text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
+          <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
           hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/contact"}>
@@ -57,7 +57,7 @@ const NavBar: React.FC = () => {
           </Link>
         </li>
         <li ref={resumeRef} className="relative ml-8 opacity-0 -translate-y-4">
-          <Link className="text-neutral-300 flex items-center justify-between p-0 text-base font-normal duration-300 
+          <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
           hover:before:visible hover:before:w-6 hover:text-neutral-50" target="_blank" to={"/resume"}>
