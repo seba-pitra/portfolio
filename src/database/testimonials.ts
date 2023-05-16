@@ -23,6 +23,14 @@ export const testimonials: Array<ITestimonial> =  [
     profilePicture: josueImage
   },
   {
+    name:     "Ayrton Juarez",
+    comment:  "I had the opportunity to follow Sebastián's professional growth as a software developer.",
+    comment2: "I can affirm that he is an excellent professional, with a broad command of the latest technologies and a great willingness to collaborate and continue learning and perfecting his skills",
+    comment3: "Without a doubt, a pleasure to work with him and I would definitely do it again for the value he brings to the development team.",
+    role:     "Front End Developer",
+    profilePicture: ayrtonImage
+  },
+  {
     name:     "Tomas Goyret",
     comment:  "Sebas is amazing! We work together developing an app for a foundation that has a huge impact.",
     comment2: "His incorporation into the dev team was key in giving development a boost. I have to highlight their commitment, willingness to solve problems at any time and their technical quality.",
@@ -37,12 +45,6 @@ export const testimonials: Array<ITestimonial> =  [
     comment3: "His ability to solve complex problems efficiently and his positive attitude make him a reliable collaborator.",
     role:     "Full Stack Developer",
     profilePicture: franImage
-  },
-  {
-    name:    "Ayrton Juarez",
-    comment: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est enim vero illo numquam eum officia, ut incidunt dolores reiciendis rem, laborum inventore nemo? Maiores quam voluptates enim amet consequuntur",
-    role:    "Front End Developer",
-    profilePicture: ayrtonImage
   },
   {
     name:     "Lucas Pedreira",
