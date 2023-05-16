@@ -10,11 +10,11 @@ interface IParams {
 
 export const useOpacity = ({ references, miliseconds }: IParams) => {
   setTimeout(() => {
-    references.forEach(reference => {
+    references.forEach((reference, index) => {
       const elementReference = reference.reference.current;
 
       if(elementReference) {
-        elementReference.className = `opacity-100 duration-[0.7s] ease-in-out ${reference.classNameProperties} `;
+        elementReference.className = `opacity-100 duration-[0.5s] ease-in-out ${reference.classNameProperties} `;
       } 
     })
   }, miliseconds)

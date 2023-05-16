@@ -1,44 +1,39 @@
-import { Link }       from "react-router-dom";
-import  React         from "react";
-import { useRef }     from "react";
-import { useOpacity } from "../../hooks";
+import { Link }      from "react-router-dom";
+import  React        from "react";
+import { useEffect } from "react";
+import { useRef }    from "react";
 
 const NavBar: React.FC = () => {
+  const contactRef  = useRef<HTMLLIElement>(null);
   const homeRef     = useRef<HTMLLIElement>(null);
   const projectsRef = useRef<HTMLLIElement>(null);
-  const contactRef  = useRef<HTMLLIElement>(null);
   const resumeRef   = useRef<HTMLLIElement>(null);
 
-  useOpacity({
-    miliseconds: 1000,
-    references: [
-      {
-        reference: homeRef,
-        classNameProperties: "relative ml-8",
-      },
-      {
-        reference: projectsRef,
-        classNameProperties: "relative ml-8",
-      },
-      {
-        reference: contactRef,
-        classNameProperties: "relative ml-8",
-      },
-      {
-        reference: resumeRef,
-        classNameProperties: "relative ml-8",
-      },
-      {
-        reference: homeRef,
-        classNameProperties: "relative ml-8",
-      },
-    ]
-  })
+  const handleOpacity = () => {
+    setTimeout(() => {
+      if(homeRef.current) {
+        homeRef.current.className = `relative ml-8 opacity-100 duration-[1.4s] ease-in-out`;
+      }
+      if(projectsRef.current) {
+        projectsRef.current.className = `relative ml-8 opacity-100 duration-[1.1s] ease-in-out`;
+      } 
+      if(contactRef.current) {
+        contactRef.current.className  = `relative ml-8 opacity-100 duration-[0.8s] ease-in-out`;
+      } 
+      if(resumeRef.current) {
+        resumeRef.current.className  = `relative ml-8 opacity-100 duration-[0.5s] ease-in-out`;
+      } 
+    }, 1000)
+  }
+
+  useEffect(() => {
+    handleOpacity()
+  }, [])
 
   return (
     <nav className=" mt-9 p-0">
       <ul className=" m-0 p-0 flex justify-end w-11/12 list-none">
-        <li  ref={homeRef} className="relative ml-8 opacity-0 -translate-y-4">
+        <li  ref={homeRef} className="relative ml-8 opacity-0 -translate-y-8">
           <Link className=" text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -46,7 +41,7 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li ref={projectsRef} className="relative ml-8 opacity-0 -translate-y-4">
+        <li ref={projectsRef} className="relative ml-8 opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -54,7 +49,7 @@ const NavBar: React.FC = () => {
             Projects
           </Link>
         </li>
-        <li ref={contactRef} className="relative ml-8 opacity-0 -translate-y-4">
+        <li ref={contactRef} className="relative ml-8 opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -62,7 +57,7 @@ const NavBar: React.FC = () => {
             Contact
           </Link>
         </li>
-        <li ref={resumeRef} className="relative ml-8 opacity-0 -translate-y-4">
+        <li ref={resumeRef} className="relative ml-8 opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
