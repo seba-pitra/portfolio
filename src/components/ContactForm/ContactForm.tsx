@@ -21,17 +21,19 @@ const ContactForm: FC = () => {
   const messageInputRef = useRef<HTMLDivElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
 
-  const { register }           = useForm<IFormValues>();
-  const { handleSubmit }       = useForm<IFormValues>();
-  const { reset }              = useForm<IFormValues>();
-  const { formState:{errors} } = useForm<IFormValues>();
+  const { 
+    register, 
+    handleSubmit, 
+    reset, 
+    formState:{errors} 
+  } = useForm<IFormValues>();
 
   const onSubmit: SubmitHandler<IFormValues> = async(data) => {
     const templateParams = {
-      from_name: data.from_name,
+      from_name:  data.from_name,
       user_email: data.user_email,
-      subject: data.subject,
-      message: data.message
+      subject:    data.subject,
+      message:    data.message
     };
 
     const responseEmailJs = await send(
@@ -103,10 +105,11 @@ const ContactForm: FC = () => {
       
       <div className="flex gap-10 w-full max-md:flex-col">
         <div ref={nameInputRef} className="opacity-0 translate-y-4">
-          <label htmlFor="user-name" className="text-lg">Name</label>
+          <label htmlFor="from_name" className="text-lg">Name</label>
           <input 
-          name="user-name"
+          name="from_name"
           type="text" 
+          id="from_name"
           {...register('from_name', { required: true })}
           className=" text-neutral-950 bg-neutral-100 p-2 w-[320px] rounded-skill-card text-lg border-none" />
           {errors.from_name && <span className=" text-red-500 mt-1">Name is required field</span>}
@@ -117,7 +120,6 @@ const ContactForm: FC = () => {
           <input 
           name="user-email"
           type="email" 
-          placeholder="Email"
           {...register('user_email', { required: true, pattern: /^\S+@\S+$/i })}
           className=" text-neutral-950 w-[320px] bg-neutral-100 p-2 rounded-skill-card text-lg border-none" />
           {errors.user_email && <span className=" text-red-500 mt-1">Email field is required</span>}
