@@ -1,34 +1,59 @@
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
-import { IHandlerAvoid } from "../../types/handlersTypes";
 import { Link }           from "react-router-dom";
 import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
-import { IProject } from "../../types/databaseTypes";
+import { useOpacity, useScroll }     from "../../hooks";
 
+interface IProps {
+  title:        string;
+  image:        string;
+  description:  string;
+  techStack:    Array<string>;
+  isFirstItem?: boolean;
+  urlDeploy?:   string;
+  urlGithub?:   string;
+}
 
-const AlignLeftProjectCard: React.FC<IProject> = ({ title, isFirstItem, image, description, techStack, urlGithub, urlDeploy }) => {
+const AlignLeftProjectCard: React.FC<IProps> = ({ 
+  title, isFirstItem, image, description, techStack, urlGithub, urlDeploy 
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll: IHandlerAvoid = () => {
-    if (cardRef.current && cardRef.current.getBoundingClientRect().top < window.innerHeight) {
-      cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
-    }
-  };
+  if(isFirstItem) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useOpacity({
+      miliseconds: 1000,
+      references: [{
+        reference: cardRef,
+        classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center"
+      }]
+    })
+  }
 
   useEffect(() => {
-    setTimeout(() => {
-      if(isFirstItem && cardRef.current) {
-        cardRef.current.className = "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
-        return; 
-      }
-      
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, 1000)
+    window.addEventListener("scroll", () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useScroll({
+        references: [{ 
+          reference: cardRef,
+          classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
+        }]
+      })
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useScroll({
+          references: [{ 
+            reference: cardRef,
+            classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
+          }]
+        })
+      });
+    };
 
   }, [isFirstItem]);
   

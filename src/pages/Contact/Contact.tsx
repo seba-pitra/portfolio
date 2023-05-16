@@ -1,15 +1,16 @@
-import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
+import ContactForm from "../../components/ContactForm/ContactForm";
+import { FC }      from "react";
+import React       from "react";
+import SocialMedia from "../../components/SocialMedia/SocialMedia";
 
-const Contact = () => {
-
+const Contact: FC = () => {
   return (
-    <>
-      <NavBar />
-    </>
+    <section className="flex justify-evenly items-center max-lg:flex-col mb-28">
+      <ContactForm />
+
+      <SocialMedia />
+    </section>
   )
 }
 
 export default Contact;
-
-// typescript @types/node @types/react @types/react-dom

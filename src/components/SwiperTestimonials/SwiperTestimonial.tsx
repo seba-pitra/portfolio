@@ -6,15 +6,25 @@ import   React          from "react";
 import { Scrollbar }    from 'swiper';
 import { Swiper }       from 'swiper/react';
 import { SwiperSlide }  from 'swiper/react';
+import TestimonialCard  from '../TestimonialsCard/TestimonialCard';
 import { testimonials } from '../../database';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import "./TestimonialsCards.css"
+import "./SwiperTestimonials.css";
 
-const TestimonialsCards: React.FC = () => {
+export interface ITestimonial {
+  name:           string;
+  comment:        string;
+  comment2:       string;
+  comment3:       string;
+  role:           string;
+  profilePicture: string;
+}
+
+const SwiperTestimonials: React.FC = () => {
 
   return (
     <div>
@@ -38,26 +48,21 @@ const TestimonialsCards: React.FC = () => {
           nextEl: "none",
           prevEl: 'none',
         }} 
-        className=' w-4/5 mt-0 mb-0 ml-auto mr-auto '>
+        className=' w-4/5 mt-8 mb-0 ml-auto mr-auto '>
 
-          {testimonials.length && testimonials.map((testimonial) => 
+          {testimonials.length && testimonials.map((testimonial: ITestimonial) => 
             <SwiperSlide>
-              <div className="h-24 w-80 max-[600px]:-ml-[130px] max-sm:w-72">
-                <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
-                  {testimonial.comment}
-                </p>
-                <div className="flex">
-                  <img src={testimonial.profilePicture} alt="testimonial_picture" className=" max-h-24 rounded-middle border-solid border-4 border-neutral-600 -mt-12 ml-2 max-[500px]:max-h-18 max-[500px]:max-w-[100px]" />
-                  <div className="flex flex-col">
-                    <h1 className=" ml-2 mt-0 text-base">{testimonial.name}</h1>
-                    <h1 className=" ml-2 mt-1 text-sm text-neutral-400">{testimonial.role}</h1>
-                  </div>
-                </div>
-              </div> 
+              <TestimonialCard 
+              name={testimonial.name}
+              comment={testimonial.comment}
+              comment2={testimonial.comment2 && testimonial.comment2}
+              comment3={testimonial.comment3}
+              profilePicture={testimonial.profilePicture}
+              role={testimonial.role} />
             </SwiperSlide>
           )}
 
-        <div className="relative bottom-8 flex items-center justify-center mt-8">
+        <div className="relative bottom-8 flex items-center justify-center mt-28 max-sm:mt-[90%] ">
           <div className="swiper-pagination"></div>
         </div>
       </Swiper>
@@ -65,4 +70,4 @@ const TestimonialsCards: React.FC = () => {
   );
 };
 
-export default TestimonialsCards;
+export default SwiperTestimonials;

@@ -1,24 +1,48 @@
-
-import React from "react";
-import { useEffect, useRef } from "react";
 import { BoxArrowUpRight} from "react-bootstrap-icons"
 import { Github }         from "react-bootstrap-icons"
 import { Link }           from "react-router-dom";
-import { IProject } from "../../types/databaseTypes";
+import  React             from "react";
+import { useEffect }      from "react";
+import { useRef }         from "react";
+import { useScroll }      from "../../hooks";
 
-const AlignRightProjectCard: React.FC<IProject> = ({ title, image, description, techStack, urlGithub, urlDeploy }) => {
+interface IProps {
+  title:        string;
+  image:        string;
+  description:  string;
+  techStack:    Array<string>;
+  isFirstItem?: boolean;
+  urlDeploy?:   string;
+  urlGithub?:   string;
+}
+
+const AlignRightProjectCard: React.FC<IProps> = ({ 
+  title, image, description, techStack, urlGithub, urlDeploy 
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    if (cardRef.current && cardRef.current.getBoundingClientRect().top < window.innerHeight) {
-      cardRef.current.className = "flex gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[1s] ease-in-out" ;
-    }
-  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useScroll({
+        references: [{ 
+          reference: cardRef,
+          classNameProperties: "flex gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
+        }]
+      })
+    });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useScroll({
+          references: [{ 
+            reference: cardRef,
+            classNameProperties: "flex gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
+          }]
+        })
+      });
     };
   }, []);
 
