@@ -16,9 +16,11 @@ import 'swiper/css/navigation';
 import "./SwiperTestimonials.css";
 
 export interface ITestimonial {
-  name: string;
-  comment: string;
-  role: string;
+  name:           string;
+  comment:        string;
+  comment2:       string;
+  comment3:       string;
+  role:           string;
   profilePicture: string;
 }
 
@@ -46,19 +48,21 @@ const SwiperTestimonials: React.FC = () => {
           nextEl: "none",
           prevEl: 'none',
         }} 
-        className=' w-4/5 mt-0 mb-0 ml-auto mr-auto '>
+        className=' w-4/5 mt-8 mb-0 ml-auto mr-auto '>
 
           {testimonials.length && testimonials.map((testimonial: ITestimonial) => 
             <SwiperSlide>
               <TestimonialCard 
               name={testimonial.name}
               comment={testimonial.comment}
+              comment2={testimonial.comment2 && testimonial.comment2}
+              comment3={testimonial.comment3}
               profilePicture={testimonial.profilePicture}
               role={testimonial.role} />
             </SwiperSlide>
           )}
 
-        <div className="relative bottom-8 flex items-center justify-center mt-8">
+        <div className="relative bottom-8 flex items-center justify-center mt-28 max-sm:mt-[90%] ">
           <div className="swiper-pagination"></div>
         </div>
       </Swiper>

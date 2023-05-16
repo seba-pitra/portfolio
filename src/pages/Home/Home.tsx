@@ -57,17 +57,17 @@ const Home: React.FC = () => {
             <h3 ref={presentationRef} className=" text-blue-400 " >Hi, my name is</h3>
           </div>
           <div ref={nameRef} className="opacity-0 translate-y-4">
-            <h1 className=" text-7xl text-slate-200 mt-2  m-0 p-0 leading-none font-bold font-poppins">Sebastian Pitra</h1>
+            <h1 className=" text-7xl max-sm:text-5xl text-slate-200 mt-2  m-0 p-0 leading-none font-bold font-poppins">Sebastian Pitra</h1>
           </div>
           <div ref={whoAmIRef} className="opacity-0 translate-y-4" >
-            <h2  className="text-4xl mt-5 text-slate-200">
+            <h2  className="text-4xl max-sm:text-2xl mt-5 text-slate-200">
               I'm a passionate {" "}
               <span className="border-solid border-blue-400 border-b-2">developer</span> 
               {" "} from Argentine
             </h2>
           </div>
           <div ref={descriptionRef} className="opacity-0 translate-y-4" >
-            <h2  className="text-1xl max-w-2xl text-slate-200">
+            <h2  className="text-1xl max-sm:text-base max-w-2xl text-slate-200">
              I write clean code and build exceptional digital experiences.
             </h2>
           </div>
