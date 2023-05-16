@@ -50,7 +50,7 @@ const About:React.FC = () => {
             <p className=" mt-2 mb-10 ml-0 mr-0 text-4xl font-bold uppercase text-slate-300">Learn more about me</p>
 
             <div className=" flex justify-around mb-16 w-full gap-10 items-center max-md:flex-col duration-[1s] ease-in-out">
-              <img src={profile} className="max-h-72 rounded-middle max-lg:max-h-60" alt="profile_picture" />
+              <img src={profile} className="max-h-80 rounded-middle max-lg:max-h-60" alt="profile_picture" />
               <div className="content">
                 <h3 className=" font-bold text-2xl text-blue-400 mb-3">Full Stack Web Developer</h3>
                 <p className=" max-w-3xl ">

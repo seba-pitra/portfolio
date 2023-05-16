@@ -3,12 +3,12 @@ interface IReference {
   classNameProperties?: string,
 }
 
-interface useOpacityProps {
+interface IParams {
   references: Array<IReference>;
-  miliseconds: number;
+  miliseconds?: number;
 } 
 
-export const useOpacity = ({ references, miliseconds }: useOpacityProps) => {
+export const useOpacity = ({ references, miliseconds }: IParams) => {
   setTimeout(() => {
     references.forEach(reference => {
       const elementReference = reference.reference.current;
@@ -18,4 +18,15 @@ export const useOpacity = ({ references, miliseconds }: useOpacityProps) => {
       } 
     })
   }, miliseconds)
+};
+
+
+export const useScroll = ({ references }: IParams) => {
+  references.forEach(reference => {
+    const element: HTMLDivElement = reference.reference.current;
+
+    if(element && element.getBoundingClientRect().top < window.innerHeight) {
+      element.className = `opacity-100 duration-[1s] ease-in-out ${reference.classNameProperties}`;
+    } 
+  })
 };

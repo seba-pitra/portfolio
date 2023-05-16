@@ -1,32 +1,54 @@
 import  React        from "react";
 import { useEffect } from "react";
 import { useRef }    from "react";
+import { useScroll } from "../../hooks";
 
 const SkillsCards: React.FC = () => {
   const frontSkillsRef = useRef<HTMLDivElement>(null);
   const backSkillsRef  = useRef<HTMLDivElement>(null);
   const toolsSkillsRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    const backSkillsElement :HTMLDivElement  = backSkillsRef.current;
-    const frontSkillsElement:HTMLDivElement = frontSkillsRef.current;
-    const toolSkillsElement :HTMLDivElement  = toolsSkillsRef.current;
-
-    if (frontSkillsElement && frontSkillsElement.getBoundingClientRect().top < window.innerHeight) {
-      frontSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80 opacity-100 duration-[0.7s] ease-in-out" ;
-    }
-    if (backSkillsElement && backSkillsElement.getBoundingClientRect().top < window.innerHeight) {
-      backSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.3s] ease-in-out" ;
-    }
-    if (toolSkillsElement && toolSkillsElement.getBoundingClientRect().top < window.innerHeight) {
-      toolSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.8s] ease-in-out" ;
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useScroll({
+        references: [
+          { 
+          reference: frontSkillsRef,
+          classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80" 
+          },
+          { 
+          reference: backSkillsRef,
+          classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10" 
+          },
+          { 
+          reference: toolsSkillsRef,
+          classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10" 
+          },
+        ]
+      })
+    });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", () => {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useScroll({
+          references: [
+            { 
+            reference: frontSkillsRef,
+            classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80" 
+            },
+            { 
+            reference: backSkillsRef,
+            classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10" 
+            },
+            { 
+            reference: toolsSkillsRef,
+            classNameProperties: "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10" 
+            },
+          ]
+        })
+      });
     };
   }, []);
 
