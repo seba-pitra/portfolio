@@ -37,7 +37,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <header className="flex w-4/5 mt-24 mb-24 ml-auto mr-auto text-start ease-in-out duration-300 ">
+      <section className="flex w-4/5 mt-24 mb-44 ml-auto mr-auto text-start ease-in-out duration-300 ">
         <div ref={containerRef} className="opacity-0">
           <div ref={presentationRef} className="opacity-0 translate-y-4">
             <h3 className=" text-blue-400 " >Hi, my name is</h3>
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             </Link>
           </div>
         </div>
-      </header>
+      </section>
 
       <About />
     </div>
