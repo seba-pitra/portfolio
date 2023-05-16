@@ -69,7 +69,7 @@ const SocialMedia = () => {
       </div>
       <div ref={linkedinIconRef} className="opacity-0 translate-x-8">
         <Linkedin color="#3498db" size={"25px"}/>
-        <Link to={"https://www.linkedin.com/in/sebasti%C3%A1n-pitra-97b5b7248/"} target="_blank" >
+        <Link to={"https://www.linkedin.com/in/sebastian-pitra/"} target="_blank" >
           Linkedin
         </Link>
       </div>
