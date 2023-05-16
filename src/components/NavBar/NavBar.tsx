@@ -1,33 +1,39 @@
-import { Link }      from "react-router-dom";
-import  React        from "react";
-import { useEffect } from "react";
-import { useRef }    from "react";
+import { Link }       from "react-router-dom";
+import  React         from "react";
+import { useRef }     from "react";
+import { useOpacity } from "../../hooks";
 
 const NavBar: React.FC = () => {
-  const contactRef  = useRef<HTMLLIElement>(null);
   const homeRef     = useRef<HTMLLIElement>(null);
   const projectsRef = useRef<HTMLLIElement>(null);
+  const contactRef  = useRef<HTMLLIElement>(null);
   const resumeRef   = useRef<HTMLLIElement>(null);
 
-  const handleOpacity = () => {
-    if(homeRef.current) {
-      homeRef.current.className = `relative ml-8 opacity-100 duration-[1.8s] ease-in-out`;
-    }
-    
-    if(projectsRef.current) {
-      projectsRef.current.className = `relative ml-8 opacity-100 duration-[1.6s] ease-in-out`;
-    } 
-    if(contactRef.current) {
-      contactRef.current.className  = `relative ml-8 opacity-100 duration-[1.3s] ease-in-out`;
-    } 
-    if(resumeRef.current) {
-      resumeRef.current.className  = `relative ml-8 opacity-100 duration-[1s] ease-in-out`;
-    } 
-  }
-
-  useEffect(() => {
-    handleOpacity()
-  }, [])
+  useOpacity({
+    miliseconds: 1000,
+    references: [
+      {
+        reference: homeRef,
+        classNameProperties: "relative ml-8",
+      },
+      {
+        reference: projectsRef,
+        classNameProperties: "relative ml-8",
+      },
+      {
+        reference: contactRef,
+        classNameProperties: "relative ml-8",
+      },
+      {
+        reference: resumeRef,
+        classNameProperties: "relative ml-8",
+      },
+      {
+        reference: homeRef,
+        classNameProperties: "relative ml-8",
+      },
+    ]
+  })
 
   return (
     <nav className=" mt-9 p-0">

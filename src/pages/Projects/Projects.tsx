@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <section className=" w-4/5 max-[500px]:w-full mt-10 mb-0 ml-auto mr-auto pt-7 pb-7 text-stone-300 text-start">
+      <section className=" w-4/5 max-[500px]:w-full mt-10 mb-32 ml-auto mr-auto pt-7 pb-7 text-stone-300 text-start">
           <h2 
             className=" text-lg font-medium p-0 m-0 tracking-wide
             uppercase text-gray-400 after:w-32 after:h-line-title after:inline-block after:bg-blue-400 

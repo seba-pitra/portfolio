@@ -1,7 +1,9 @@
-import React             from "react";
+import  React            from "react";
+import { useRef }        from "react";
 import { FC }            from "react";
 import { send }          from "emailjs-com"
 import { useForm }       from "react-hook-form"
+import { useOpacity }    from "../../hooks";
 import { SubmitHandler } from "react-hook-form"
 import { toast }         from 'react-toastify';
 
@@ -13,7 +15,16 @@ interface IFormValues {
 }
 
 const ContactForm: FC = () => {
-  const { register, handleSubmit, reset, formState:{errors} } = useForm<IFormValues>();
+  const nameInputRef    = useRef<HTMLDivElement>(null);
+  const emailInputRef   = useRef<HTMLDivElement>(null);
+  const subjectInputRef = useRef<HTMLDivElement>(null);
+  const messageInputRef = useRef<HTMLDivElement>(null);
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
+
+  const { register }           = useForm<IFormValues>();
+  const { handleSubmit }       = useForm<IFormValues>();
+  const { reset }              = useForm<IFormValues>();
+  const { formState:{errors} } = useForm<IFormValues>();
 
   const onSubmit: SubmitHandler<IFormValues> = async(data) => {
     const templateParams = {
@@ -57,6 +68,32 @@ const ContactForm: FC = () => {
     })
   };
 
+  useOpacity({
+    miliseconds: 1000, 
+    references: [
+      {
+      reference: nameInputRef,
+      classNameProperties: "flex flex-col text-start"
+      },
+      {
+      reference: emailInputRef,
+      classNameProperties: "flex flex-col text-start"
+      },
+      {
+      reference: subjectInputRef,
+      classNameProperties: "flex flex-col text-start"
+      },
+      {
+      reference: messageInputRef,
+      classNameProperties: "flex flex-col text-start"
+      },
+      {
+      reference: submitButtonRef,
+      classNameProperties: "text-neutral-200 max-w-[680px] bg-blue-500 p-3 rounded-skill-card text-xl border-none"
+      },
+    ], 
+  })
+
   return (
     <form
     onSubmit={handleSubmit(onSubmit)} 
@@ -65,7 +102,7 @@ const ContactForm: FC = () => {
       <h1 className=" text-5xl font-bold -mt-8">Get In Touch</h1>
       
       <div className="flex gap-10 w-full max-md:flex-col">
-        <div className="flex flex-col text-start">
+        <div ref={nameInputRef} className="opacity-0 translate-y-4">
           <label htmlFor="user-name" className="text-lg">Name</label>
           <input 
           name="user-name"
@@ -75,7 +112,7 @@ const ContactForm: FC = () => {
           {errors.from_name && <span className=" text-red-500 mt-1">Name is required field</span>}
         </div>
 
-        <div className="flex flex-col text-start">
+        <div ref={emailInputRef} className="opacity-0 translate-y-4">
           <label htmlFor="user-email" className="text-lg">Email</label>
           <input 
           name="user-email"
@@ -87,7 +124,7 @@ const ContactForm: FC = () => {
         </div>
       </div>
       
-      <div className="flex flex-col text-start">
+      <div ref={subjectInputRef} className="opacity-0 translate-y-4">
         <label htmlFor="subject" className="text-lg">Subject</label>
         <input 
         name="subject"
@@ -97,7 +134,7 @@ const ContactForm: FC = () => {
         className=" text-neutral-950  max-w-[680px] bg-neutral-100 p-2 rounded-skill-card text-lg border-none" />
       </div>
       
-      <div className="flex flex-col text-start">
+      <div ref={messageInputRef} className="opacity-0 translate-y-4">
         <label htmlFor="message" className="text-lg">Message</label>
         <textarea 
         {...register('message', { required: true })} 
@@ -105,7 +142,7 @@ const ContactForm: FC = () => {
         {errors.message && <span className=" text-red-500 mt-1">Message field is required</span>}
       </div>
 
-      <button type="submit" className="text-neutral-200 max-w-[680px] bg-blue-500 p-3 rounded-skill-card text-xl border-none">
+      <button ref={submitButtonRef} type="submit" className="opacity-0 translate-y-4">
         Send Message
       </button>
     </form>
