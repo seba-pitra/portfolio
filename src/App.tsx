@@ -9,6 +9,7 @@ import { Routes }         from 'react-router-dom';
 import NavBar             from './components/NavBar/NavBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChatBot from './components/ChatBot/ChatBot';
 
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <Route path="/resume"   element={<PDFResume />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact'  element={<Contact />} />
+          <Route path='/chat'  element={<ChatBot />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />
