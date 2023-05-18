@@ -4,6 +4,7 @@ import { SubmitHandler,  } from "react-hook-form"
 import { Send } from "react-bootstrap-icons";
 import Rocket from "./Rocket";
 import rocketImg from "../../assets/img/rocket.jpg"
+import rocketProfileImg from "../../assets/img/rocket-profile.jpg"
 
 interface IFormValues {
   content: string;
@@ -87,14 +88,24 @@ const ChatBot: FC = () => {
       {isSelected && 
         <>
           <header className="fixed top-0 bg-neutral-800 p-2 w-full flex justify-center items-center">
-            <span
-              onClick={() => setIsSelected(false)} 
-              className="w-full cursor-pointer text-neutral-400 flex justify-end text-[14px]">
-              Close chat
-            </span>
+            <div className="flex w-full gap-2 justify-center ">
+              <img 
+                src={rocketProfileImg} 
+                alt="rocket-profile-chat"
+                className="max-h-12 rounded-middle" />
+                <div className="flex flex-col">
+                  <h1>Rocket</h1>
+                  <h2 className=" text-neutral-400">Assistant</h2>
+                </div>
+                <span
+                  onClick={() => setIsSelected(false)} 
+                  className="w-full cursor-pointer text-neutral-400 flex justify-end text-[14px]">
+                  Close chat
+                </span>
+            </div>
           </header>
 
-          <div ref={chatContainerRef} className="bg-neutral-800  text-[15px] max-w-sm max-h-96 overflow-auto p-3">
+          <div ref={chatContainerRef} className="bg-neutral-800 mt-16 text-[15px] max-w-sm max-h-96 overflow-auto p-3">
             {messages.length && messages.map((message: IMessages, index: number) => (
               message.role === "user" ?
                 <div key={Math.random() * index} className="flex justify-end text-end w-full p-2 mb-1">
