@@ -1,6 +1,7 @@
 import React, { useState, FC, useEffect } from "react";
 import rocketImg from "../../assets/img/rocket.jpg"
 
+
 interface IProps {
   word: string;
   isLastMessage: boolean;
@@ -23,9 +24,11 @@ const TypewriterAnimation: FC<IProps> = ({ word, isLastMessage, scrollToButtom }
           scrollToButtom()
           currentIndex++;
         }
-      }, 50)
-  
-      return () => clearInterval(intervalId);
+      }, 30)
+      
+      return () => {
+        clearInterval(intervalId)
+      };
     }      
   }, [word, isLastMessage, scrollToButtom])
 
