@@ -17,12 +17,12 @@ const App: React.FC = () => {
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <ChatBot />
         <Routes>
           <Route path='/'         element={<Home />} />
           <Route path="/resume"   element={<PDFResume />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/contact'  element={<Contact />} />
-          <Route path='/chat'  element={<ChatBot />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />
