@@ -3,8 +3,8 @@ import { useForm }       from "react-hook-form"
 import { SubmitHandler,  } from "react-hook-form"
 import { Send } from "react-bootstrap-icons";
 import Rocket from "./Rocket";
-import rocketImg from "../../assets/img/rocket.jpg"
 import rocketProfileImg from "../../assets/img/rocket-profile.jpg"
+import TypewriterAnimation from "../TypewriterAnimation/TypewriterAnimation";
 
 interface IFormValues {
   content: string;
@@ -29,13 +29,8 @@ const ChatBot: FC = () => {
     {
       id:      String(Date.now()),
       role:    "assistant",
-      content: "Hi, my name's Rocket. I'm work with Sebastian to create amazing projects."
-    },
-    {
-      id:      String(Date.now()),
-      role:    "assistant",
-      content: "How can I help you?"
-    },
+      content: "Hi, my name's Rocket. I'm work with Sebastian creating amazing projects. How can I help you?"
+    }
   ]);
 
   useEffect(() => {
@@ -63,7 +58,7 @@ const ChatBot: FC = () => {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: args.content }]
+        messages: [{ role: "user", content: process.env.REACT_APP_OPENAI_DEFAULT_MESSAGE + args.content }]
       }),
     })
     .then(res => res.json())
@@ -105,7 +100,7 @@ const ChatBot: FC = () => {
             </div>
           </header>
 
-          <div ref={chatContainerRef} className="bg-neutral-800 mt-16 text-[15px] max-w-sm max-h-96 overflow-auto p-3">
+          <div ref={chatContainerRef} className="bg-neutral-800 mt-16 text-[15px] w-[384px] h-[300px] overflow-auto p-3">
             {messages.length && messages.map((message: IMessages, index: number) => (
               message.role === "user" ?
                 <div key={Math.random() * index} className="flex justify-end text-end w-full p-2 mb-1">
@@ -114,15 +109,10 @@ const ChatBot: FC = () => {
                   </p>
                 </div>
                 :
-                <div key={Math.random() * index} className="flex justify-start text-start w-full p-2 mb-1">
-                   <img 
-                      src={rocketImg} 
-                      alt="rocket-img-chat"
-                      className="max-h-10" />
-                  <p className="bg-neutral-500 max-w-fit p-2 rounded-[3px]">
-                    {message.content}
-                  </p>
-                </div>
+                <TypewriterAnimation 
+                  isLastMessage={index === messages.length - 1}
+                  key={Math.random() * index} 
+                  word={message.content} />
             ))}
           </div>
           
@@ -134,14 +124,14 @@ const ChatBot: FC = () => {
                 <textarea
                   onKeyDown={handleKeyDown}
                   {...register('content', { required: true })}
-                  className=" text-neutral-200 focus:outline-none pl-2 pr-2 text-base bg-neutral-700 w-full resize-none overflow-y-auto min-h-[50px] max-h-[300px] pt-2 pb-2 rounded-skill-card" />
+                  className=" text-neutral-200 focus:outline-none pl-2 pr-2 text-base bg-neutral-700 w-full resize-none overflow-y-auto h-[50px] max-h-[300px] pt-2 pb-2 rounded-skill-card" />
 
                 <button type="submit">
                   <Send size={"25px"} color="#3498db" />
                 </button>
               </div>
 
-            </form>
+          </form>
           </>
         }
     </div>
