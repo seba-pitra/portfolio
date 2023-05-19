@@ -31,8 +31,8 @@ const NavBar: React.FC = () => {
   }, [])
 
   return (
-    <nav className=" mt-9 p-0">
-      <ul className=" m-0 p-0 flex justify-end w-11/12 list-none">
+    <nav className=" mt-9 p-0 max-sm:mr-5">
+      <ul className=" m-0 p-0 flex justify-end  max-sm:w-full  w-11/12 list-none">
         <li  ref={homeRef} className="relative ml-8 opacity-0 -translate-y-8">
           <Link className=" text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 

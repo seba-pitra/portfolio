@@ -39,7 +39,7 @@ const ChatBot: FC = () => {
     }, 2000);
 
   }, [isSelected]);
-  
+
 
   const handleOpenChat = (): void => {
     setTimeout(() => {
@@ -70,7 +70,7 @@ const ChatBot: FC = () => {
 
 
   return (
-    <div className="fixed bottom-0 right-0 transform mr-10 mb-10">
+    <div className="fixed bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10">
      {
         !isSelected && 
         <div 

@@ -9,7 +9,7 @@ interface IProps {
 const ChatHeader: FC<IProps> = ({ handleCloseChat }) => {
 
   return (
-    <header className="fixed top-0 bg-neutral-700 p-2 w-full flex justify-center items-center">
+    <header className="fixed top-0 max-sm:w-[350px] bg-neutral-700 p-2 w-full flex justify-center items-center">
     <div className="flex w-full gap-2 justify-center ">
       <img 
         src={rocketProfileImg} 

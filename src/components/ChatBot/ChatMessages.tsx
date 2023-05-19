@@ -24,7 +24,7 @@ const ChatMessages: FC<IProps> = ({ messages, chatContainerMessagesRef }) => {
 
 
   return (
-    <div ref={chatContainerMessagesRef} className="bg-neutral-800 mt-16 text-[15px] w-[384px] h-[300px] overflow-auto p-3">
+    <div ref={chatContainerMessagesRef} className="bg-neutral-800 max-sm:w-[350px] mt-16 text-[15px] w-[384px] h-[300px] overflow-auto p-3">
       {messages.length && messages.map((message: IMessages, index: number) => (
 
         message.role === "user" ?
