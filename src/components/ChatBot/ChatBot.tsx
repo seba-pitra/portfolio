@@ -71,7 +71,7 @@ const ChatBot: FC = () => {
 
   return (
     <div className="absolute">
-      <div className="fixed bg-red-50 bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10 z-10">
+      <div className="fixed bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10 z-10">
 
       {
           !isSelected && 
