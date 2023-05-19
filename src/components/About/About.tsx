@@ -10,19 +10,14 @@ import { useRef }         from "react";
 
 const About:React.FC = () => {
   const aboutmeDivRef   = useRef<HTMLDivElement>(null);
-  const skillsDivRef    = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
-    const skillsElement: HTMLDivElement       = skillsDivRef.current;
     const testimonialsElement: HTMLDivElement = testimonialsRef.current;
 
     if(aboutmeDivRef.current) {
       aboutmeDivRef.current.className = ` duration-[1s] ease-in-out`;
     } 
-    if (skillsElement && skillsElement.getBoundingClientRect().top < window.innerHeight) {
-      skillsElement.className = "transition-opacity opacity-100 duration-[1s] ease-in-out" ;
-    }
     if (testimonialsElement && testimonialsElement.getBoundingClientRect().top < window.innerHeight) {
       testimonialsElement.className = "transition-opacity opacity-100 duration-[1.5s] ease-in-out" ;
     }
@@ -74,9 +69,7 @@ const About:React.FC = () => {
             </div>
           </div>
 
-          <div ref={skillsDivRef} className="translate-y-2 opacity-0">
-            <SkillsCards />
-          </div>
+          <SkillsCards />
 
           <div ref={testimonialsRef} className="translate-y-2 opacity-0">
             <SwiperTestimonials />

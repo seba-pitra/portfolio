@@ -9,6 +9,7 @@ import { Routes }         from 'react-router-dom';
 import NavBar             from './components/NavBar/NavBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChatBot from './components/ChatBot/ChatBot';
 
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <ChatBot />
         <Routes>
           <Route path='/'         element={<Home />} />
           <Route path="/resume"   element={<PDFResume />} />
