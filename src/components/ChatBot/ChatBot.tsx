@@ -70,31 +70,34 @@ const ChatBot: FC = () => {
 
 
   return (
-    <div className="fixed bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10">
-     {
-        !isSelected && 
-        <div 
-          className="opacity-0"
-          ref={rocketContainerRef} 
-          onClick={handleOpenChat} > 
-          <Rocket />
-          <ChatWindow />
-        </div>
-      }
+    <div className="absolute">
+      <div className="fixed bg-red-50 bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10 z-10">
 
-      {isSelected && 
-        <div ref={chatContainerRef} className="translate-x-80 opacity-0 duration-[0.3s] ease-in-out">
-          <ChatHeader handleCloseChat={handleCloseChat} />
+      {
+          !isSelected && 
+          <div 
+            className="opacity-0"
+            ref={rocketContainerRef} 
+            onClick={handleOpenChat} > 
+            <Rocket />
+            <ChatWindow />
+          </div>
+        }
 
-          <ChatMessages 
-            messages={messages}
-            chatContainerMessagesRef={chatContainerMessagesRef} />
+        {isSelected && 
+          <div ref={chatContainerRef} className="translate-x-80 opacity-0 duration-[0.3s] ease-in-out">
+            <ChatHeader handleCloseChat={handleCloseChat} />
 
-          <ChatForm 
-            messages={messages}
-            setMessages={setMessages} />
-        </div>
-      }
+            <ChatMessages 
+              messages={messages}
+              chatContainerMessagesRef={chatContainerMessagesRef} />
+
+            <ChatForm 
+              messages={messages}
+              setMessages={setMessages} />
+          </div>
+        }
+      </div>
     </div>
   )
 };
