@@ -7,7 +7,7 @@ import React               from "react";
 const SkillsCards: React.FC = () => {
 
   return (
-    <div>
+    <>
       <div>
         <h2 
         className="text-lg font-medium p-0 m-0 tracking-wide
@@ -24,7 +24,7 @@ const SkillsCards: React.FC = () => {
 
         <OthersSkillsCards />
       </div>
-    </div>
+    </>
   );
 };
 

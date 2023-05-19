@@ -37,36 +37,36 @@ const ContactForm: FC = () => {
     };
 
     const responseEmailJs = await send(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID, 
+      process.env.REACT_APP_SERVICE_ID as string,
+      process.env.REACT_APP_TEMPLATE_ID as string, 
       templateParams, 
-      process.env.REACT_APP_PUBLIC_KEY
+      process.env.REACT_APP_PUBLIC_KEY as string
     )
 
     if(responseEmailJs.status === 200) {
       reset();
       
       return toast.success("Message sent successfully", {
-        position: "bottom-left",
-        autoClose: 5000,
+        position:        "bottom-left",
+        autoClose:       5000,
         hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
+        closeOnClick:    true,
+        pauseOnHover:    true,
+        draggable:       true,
+        progress:        undefined,
+        theme:           "light",
       })
     } 
    
     toast.error("Could not send message", {
-      position: "bottom-left",
-      autoClose: 5000,
+      position:       "bottom-left",
+      autoClose:       5000,
       hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+      closeOnClick:    true,
+      pauseOnHover:    true,
+      draggable:       true,
+      progress:        undefined,
+      theme:           "light",
     })
   };
 
@@ -98,8 +98,9 @@ const ContactForm: FC = () => {
 
   return (
     <form
-    onSubmit={handleSubmit(onSubmit)} 
-    className="flex flex-col gap-10 mt-10 mb-20 max-sm:mr-4 max-sm:ml-4 text-start" >
+      onSubmit={handleSubmit(onSubmit)} 
+      className="flex flex-col gap-10 mt-10 mb-20 max-sm:mr-4 max-sm:ml-4 text-start" >
+        
       <span className=" text-blue-400">What’s Next?</span>
       <h1 className=" text-5xl font-bold -mt-8">Get In Touch</h1>
       
@@ -107,7 +108,6 @@ const ContactForm: FC = () => {
         <div ref={nameInputRef} className="opacity-0 translate-y-4">
           <label htmlFor="from_name" className="text-lg">Name</label>
           <input 
-          name="from_name"
           type="text" 
           id="from_name"
           {...register('from_name', { required: true })}
@@ -118,7 +118,6 @@ const ContactForm: FC = () => {
         <div ref={emailInputRef} className="opacity-0 translate-y-4">
           <label htmlFor="user-email" className="text-lg">Email</label>
           <input 
-          name="user-email"
           type="email" 
           {...register('user_email', { required: true, pattern: /^\S+@\S+$/i })}
           className=" text-neutral-950 w-[320px] bg-neutral-100 p-2 rounded-skill-card text-lg border-none" />
@@ -129,7 +128,6 @@ const ContactForm: FC = () => {
       <div ref={subjectInputRef} className="opacity-0 translate-y-4">
         <label htmlFor="subject" className="text-lg">Subject</label>
         <input 
-        name="subject"
         type="text" 
         placeholder="Optional"
         {...register('subject', { required: false })} 

@@ -58,7 +58,7 @@ const Presentation: React.FC = () => {
           </div>
 
           <div ref={socialMediaRef} className="opacity-0 translate-y-4">
-            <Link to={"https://www.linkedin.com/in/sebasti%C3%A1n-pitra-97b5b7248/"} target="_blank" className="bg-gray-800 p-3 rounded-middle hover:bg-gray-700 transition-animationLineBefore duration-300"> 
+            <Link to={"https://www.linkedin.com/in/sebastian-pitra/"} target="_blank" className="bg-gray-800 p-3 rounded-middle hover:bg-gray-700 transition-animationLineBefore duration-300"> 
               <Linkedin color="rgb(59 130 246)" size={"20px"}/> 
             </Link >
             <Link to={"https://github.com/seba-pitra"} target="_blank" className="bg-gray-800 p-3 rounded-middle hover:bg-gray-700 transition-animationLineBefore duration-300"> 

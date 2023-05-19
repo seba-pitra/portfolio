@@ -1,5 +1,5 @@
 import { FC }               from "react";
-import { MutableRefObject } from "react";
+import { RefObject }        from "react";
 import React                from "react";
 import TypewriterAnimation  from "../TypewriterAnimation/TypewriterAnimation";
 
@@ -11,10 +11,11 @@ interface IMessages {
 
 interface IProps {
   messages: Array<IMessages>;
-  chatContainerMessagesRef: MutableRefObject<HTMLDivElement>;
+  chatContainerMessagesRef: RefObject<HTMLDivElement>;
 }
 
 const ChatMessages: FC<IProps> = ({ messages, chatContainerMessagesRef }) => {
+
   const scrollToBottom = ():void => {
     const chatContainer = chatContainerMessagesRef.current;
     if (chatContainer) {
@@ -29,7 +30,7 @@ const ChatMessages: FC<IProps> = ({ messages, chatContainerMessagesRef }) => {
 
         message.role === "user" ?
         <div key={Math.random() * index} className="flex justify-end text-end w-full p-1 mb-1">
-          <p className="bg-blue-400 max-w-fit p-2 rounded-[3px]">
+          <p className="bg-blue-400 max-w-[80%] p-2 rounded-[3px]">
             {message.content}
           </p>
         </div>

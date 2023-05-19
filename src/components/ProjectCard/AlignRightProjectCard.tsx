@@ -22,7 +22,7 @@ const AlignRightProjectCard: React.FC<IProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
 
 
-  useEffect(() => {
+  useEffect((): () => void => {
     window.addEventListener("scroll", () => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       useScroll({
@@ -33,7 +33,7 @@ const AlignRightProjectCard: React.FC<IProps> = ({
       })
     });
 
-    return () => {
+    return ():void => {
       window.removeEventListener("scroll", () => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useScroll({

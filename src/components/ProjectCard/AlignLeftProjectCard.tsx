@@ -4,7 +4,8 @@ import { Link }           from "react-router-dom";
 import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
-import { useOpacity, useScroll }     from "../../hooks";
+import { useScroll }      from "../../hooks";
+import { useOpacity }     from "../../hooks";
 
 interface IProps {
   title:        string;
@@ -32,7 +33,7 @@ const AlignLeftProjectCard: React.FC<IProps> = ({
     })
   }
 
-  useEffect(() => {
+  useEffect((): () => void => {
     window.addEventListener("scroll", () => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
       useScroll({
@@ -43,7 +44,7 @@ const AlignLeftProjectCard: React.FC<IProps> = ({
       })
     });
 
-    return () => {
+    return ():void => {
       window.removeEventListener("scroll", () => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useScroll({

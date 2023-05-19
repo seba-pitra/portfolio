@@ -1,5 +1,8 @@
-import React, { useState, FC, useEffect } from "react";
-import rocketImg from "../../assets/img/rocket.jpg"
+import React         from "react";
+import { FC }        from "react";
+import { useState }  from "react";
+import { useEffect } from "react";
+import rocketImg     from "../../assets/img/rocket.jpg"
 
 
 interface IProps {
@@ -9,7 +12,7 @@ interface IProps {
 };
 
 const TypewriterAnimation: FC<IProps> = ({ word, isLastMessage, scrollToButtom }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
 
   useEffect(() => {
     let currentIndex = 0;
@@ -26,7 +29,7 @@ const TypewriterAnimation: FC<IProps> = ({ word, isLastMessage, scrollToButtom }
         }
       }, 30)
       
-      return () => {
+      return ():void => {
         clearInterval(intervalId)
       };
     }      

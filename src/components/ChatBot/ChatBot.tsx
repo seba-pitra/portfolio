@@ -31,7 +31,7 @@ const ChatBot: FC = () => {
     }
   ]);
 
-  useEffect(() => {
+  useEffect((): void => {
     !isSelected && setTimeout(() => {
       if(rocketContainerRef.current) {
         rocketContainerRef.current.className = ` opacity-100 duration-[0.7s] ease-in-out `;
@@ -42,15 +42,15 @@ const ChatBot: FC = () => {
 
 
   const handleOpenChat = (): void => {
-    setTimeout(() => {
+    setTimeout(():void => {
       if(rocketContainerRef.current) {
         rocketContainerRef.current.className = `translate-x-80 opacity-0 duration-[0.7s] ease-in-out `;
       } 
     }, 100)
 
-    setTimeout(() => setIsSelected(true), 500)
+    setTimeout(():void => setIsSelected(true), 500)
 
-    setTimeout(() => {
+    setTimeout(():void => {
       if(chatContainerRef.current) {
         chatContainerRef.current.className = ` opacity-100 duration-[0.7s] ease-in-out `;
       } 
@@ -59,42 +59,45 @@ const ChatBot: FC = () => {
 
 
   const handleCloseChat = (): void => {
-    setTimeout(() => {
+    setTimeout(():void => {
       if(chatContainerRef.current) {
         chatContainerRef.current.className = ` opacity-0 translate-x-80 duration-[0.7s] ease-in-out `;
       } 
     }, 100)
 
-    setTimeout(() => setIsSelected(false), 1000)
+    setTimeout(():void => setIsSelected(false), 1000)
   };
 
 
   return (
-    <div className="fixed bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10">
-     {
-        !isSelected && 
-        <div 
-          className="opacity-0"
-          ref={rocketContainerRef} 
-          onClick={handleOpenChat} > 
-          <Rocket />
-          <ChatWindow />
-        </div>
-      }
+    <div className="absolute">
+      <div className="fixed bottom-0 right-0 max-sm:mr-3 transform mr-10 mb-10 z-10">
 
-      {isSelected && 
-        <div ref={chatContainerRef} className="translate-x-80 opacity-0 duration-[0.3s] ease-in-out">
-          <ChatHeader handleCloseChat={handleCloseChat} />
+      {
+          !isSelected && 
+          <div 
+            className="opacity-0"
+            ref={rocketContainerRef} 
+            onClick={handleOpenChat} > 
+            <Rocket />
+            <ChatWindow />
+          </div>
+        }
 
-          <ChatMessages 
-            messages={messages}
-            chatContainerMessagesRef={chatContainerMessagesRef} />
+        {isSelected && 
+          <div ref={chatContainerRef} className="translate-x-80 opacity-0 duration-[0.3s] ease-in-out">
+            <ChatHeader handleCloseChat={handleCloseChat} />
 
-          <ChatForm 
-            messages={messages}
-            setMessages={setMessages} />
-        </div>
-      }
+            <ChatMessages 
+              messages={messages}
+              chatContainerMessagesRef={chatContainerMessagesRef} />
+
+            <ChatForm 
+              messages={messages}
+              setMessages={setMessages} />
+          </div>
+        }
+      </div>
     </div>
   )
 };
