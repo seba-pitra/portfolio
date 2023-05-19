@@ -57,19 +57,19 @@ const SocialMedia = () => {
       </div>
       <div ref={webIconRef} className="opacity-0 translate-x-8">
         <Globe color="#3498db" size={"25px"}/>
-        <Link to={"http://localhost:3000/contact"}>
+        <Link to={"https://sebastian-pitra.vercel.app/"} target="_blank">
           <span>Website</span>
         </Link>
       </div>
       <div ref={githubIconRef} className="opacity-0 translate-x-8">
         <Github color="#3498db" size={"25px"}/>
-        <Link to={"https://github.com/seba-pitra"}  >
+        <Link to={"https://github.com/seba-pitra"} target="_blank" >
           Github
         </Link>
       </div>
       <div ref={linkedinIconRef} className="opacity-0 translate-x-8">
         <Linkedin color="#3498db" size={"25px"}/>
-        <Link to={"https://www.linkedin.com/in/sebasti%C3%A1n-pitra-97b5b7248/"}>
+        <Link to={"https://www.linkedin.com/in/sebastian-pitra/"} target="_blank" >
           Linkedin
         </Link>
       </div>

@@ -26,7 +26,6 @@ export const projects: Array<IProject> =  [
     image:       portamorImage,
     description: "Project focused on promoting active aging among individuals through the implementation of an online education platform in Peru. This platform provides learning opportunities and personal development to the elderly population.", 
     techStack:   ["Javascript", "React", "NodeJS", "PostgreSQL"],
-    urlGithub:   "https://github.com/seba-pitra/PI-DOGS",
   },
   {
     title:       "Non Fungible Town",
