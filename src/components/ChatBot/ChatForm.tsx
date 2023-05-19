@@ -31,7 +31,7 @@ const ChatForm: FC<IProps> = ({ messages, setMessages }) => {
     }
   }
   
-  const onSubmit: SubmitHandler<IFormValues> = async(args) => {
+  const onSubmit: SubmitHandler<IFormValues> = async(args):Promise<void> => {
     reset()
     
     setMessages([ ...messages, { id: String(Date.now()), role: "user", content: args.content } ])

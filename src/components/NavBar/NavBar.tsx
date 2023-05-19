@@ -9,8 +9,8 @@ const NavBar: React.FC = () => {
   const projectsRef = useRef<HTMLLIElement>(null);
   const resumeRef   = useRef<HTMLLIElement>(null);
 
-  const handleOpacity = () => {
-    setTimeout(() => {
+  const handleOpacity = ():void => {
+    setTimeout(():void => {
       if(homeRef.current) {
         homeRef.current.className = `relative ml-8 opacity-100 duration-[1.4s] ease-in-out`;
       }
@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
     }, 1000)
   }
 
-  useEffect(() => {
+  useEffect(():void => {
     handleOpacity()
   }, [])
 

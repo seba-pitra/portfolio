@@ -3,17 +3,17 @@ import { useEffect } from "react";
 import { useRef }    from "react";
 
 const BackEndSkillsCards: React.FC = () => {
-  const backSkillsRef  = useRef<HTMLDivElement>(null);
+  const backSkillsRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    const backSkillsElement :HTMLDivElement  = backSkillsRef.current;
+  const handleScroll = ():void => {
+    const backSkillsElement :HTMLDivElement = backSkillsRef.current as HTMLDivElement;
     
     if (backSkillsElement && backSkillsElement.getBoundingClientRect().top < window.innerHeight) {
       backSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.3s] ease-in-out" ;
     }
   };
 
-  useEffect(() => {
+  useEffect((): () => void => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

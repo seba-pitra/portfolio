@@ -16,11 +16,11 @@ const SocialMedia = () => {
   const linkedinIconRef = useRef<HTMLDivElement>(null);
 
   const handleOpacity = () => {
-    const emailElement    = emailIconRef.current;
-    const locationElement = locationIconRef.current;
-    const webElement      = webIconRef.current;
-    const githubElement   = githubIconRef.current;
-    const linkedinElement = linkedinIconRef.current;
+    const emailElement    :HTMLDivElement = emailIconRef.current    as HTMLDivElement;
+    const locationElement :HTMLDivElement = locationIconRef.current as HTMLDivElement;
+    const webElement      :HTMLDivElement = webIconRef.current      as HTMLDivElement;
+    const githubElement   :HTMLDivElement = githubIconRef.current   as HTMLDivElement;
+    const linkedinElement :HTMLDivElement = linkedinIconRef.current as HTMLDivElement;
 
     setTimeout(() => {
       if(emailElement) {

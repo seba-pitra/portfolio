@@ -1,6 +1,6 @@
-import coninImage      from "../assets/img/conin.jpg"
-import dogBreedsImage  from "../assets/img/dog-breeds.jpg"
-import portamorImage   from "../assets/img/portamor.jpg"
+import coninImage           from "../assets/img/conin.jpg"
+import dogBreedsImage       from "../assets/img/dog-breeds.jpg"
+import portamorImage        from "../assets/img/portamor.jpg"
 import nonFungibleTownImage from "../assets/img/nonFungibleTown.jpg"
 
 export interface IProject {

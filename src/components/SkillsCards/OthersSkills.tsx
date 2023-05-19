@@ -5,15 +5,15 @@ import { useRef }    from "react";
 const OthersSkillsCards: React.FC = () => {
   const toolsSkillsRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    const toolSkillsElement :HTMLDivElement  = toolsSkillsRef.current;
+  const handleScroll = ():void => {
+    const toolSkillsElement :HTMLDivElement  = toolsSkillsRef.current as HTMLDivElement;
 
     if (toolSkillsElement && toolSkillsElement.getBoundingClientRect().top < window.innerHeight) {
       toolSkillsElement.className = "max-[565px]:flex max-[565px]:flex-col max-[500px]:w-80  max-[500px]:mt-10 opacity-100 duration-[1.8s] ease-in-out" ;
     }
   };
 
-  useEffect(() => {
+  useEffect((): () => void => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

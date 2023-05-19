@@ -31,7 +31,7 @@ const ChatBot: FC = () => {
     }
   ]);
 
-  useEffect(() => {
+  useEffect((): void => {
     !isSelected && setTimeout(() => {
       if(rocketContainerRef.current) {
         rocketContainerRef.current.className = ` opacity-100 duration-[0.7s] ease-in-out `;
@@ -42,15 +42,15 @@ const ChatBot: FC = () => {
 
 
   const handleOpenChat = (): void => {
-    setTimeout(() => {
+    setTimeout(():void => {
       if(rocketContainerRef.current) {
         rocketContainerRef.current.className = `translate-x-80 opacity-0 duration-[0.7s] ease-in-out `;
       } 
     }, 100)
 
-    setTimeout(() => setIsSelected(true), 500)
+    setTimeout(():void => setIsSelected(true), 500)
 
-    setTimeout(() => {
+    setTimeout(():void => {
       if(chatContainerRef.current) {
         chatContainerRef.current.className = ` opacity-100 duration-[0.7s] ease-in-out `;
       } 
@@ -59,13 +59,13 @@ const ChatBot: FC = () => {
 
 
   const handleCloseChat = (): void => {
-    setTimeout(() => {
+    setTimeout(():void => {
       if(chatContainerRef.current) {
         chatContainerRef.current.className = ` opacity-0 translate-x-80 duration-[0.7s] ease-in-out `;
       } 
     }, 100)
 
-    setTimeout(() => setIsSelected(false), 1000)
+    setTimeout(():void => setIsSelected(false), 1000)
   };
 
 

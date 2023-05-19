@@ -50,7 +50,7 @@ const SwiperTestimonials: React.FC = () => {
         }} 
         className=' w-4/5 mt-8 mb-0 ml-auto mr-auto '>
 
-          {testimonials.length && testimonials.map((testimonial: ITestimonial) => 
+          {testimonials.length && testimonials.map((testimonial): any => 
             <SwiperSlide>
               <TestimonialCard 
               name={testimonial.name}
