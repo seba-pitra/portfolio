@@ -1,6 +1,7 @@
 import ChatForm     from "./ChatForm";
 import ChatMessages from "./ChatMessages";
 import ChatHeader   from "./ChatHeader";
+import ChatWindow   from "./ChatWindow";
 import { FC }       from "react";
 import React        from "react";
 import Rocket       from "./Rocket";
@@ -38,6 +39,7 @@ const ChatBot: FC = () => {
     }, 2000);
 
   }, [isSelected]);
+  
 
   const handleOpenChat = (): void => {
     setTimeout(() => {
@@ -55,6 +57,7 @@ const ChatBot: FC = () => {
     }, 800)
   };
 
+
   const handleCloseChat = (): void => {
     setTimeout(() => {
       if(chatContainerRef.current) {
@@ -66,7 +69,6 @@ const ChatBot: FC = () => {
   };
 
 
-
   return (
     <div className="fixed bottom-0 right-0 transform mr-10 mb-10">
      {
@@ -76,6 +78,7 @@ const ChatBot: FC = () => {
           ref={rocketContainerRef} 
           onClick={handleOpenChat} > 
           <Rocket />
+          <ChatWindow />
         </div>
       }
 

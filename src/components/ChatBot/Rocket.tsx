@@ -5,7 +5,7 @@ import rocketImg from "../../assets/img/rocket.jpg"
 const Rocket: FC = () => {
 
   return (
-    <div className="transition-animationLineBefore">
+    <div className="transition-animationLineBefore max-md:hidden">
       <p className="bg-neutral-800 mr-12 p-3 rounded-[5px]">
         Do you need help?
       </p>
