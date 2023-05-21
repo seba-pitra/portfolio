@@ -13,7 +13,7 @@ const TestimonialCard: React.FC<IProps> = ({ name, comment, comment2, comment3, 
   return (
     <div className="h-24 w-96 max-[600px]:-ml-[130px] max-sm:mt-[60%] mt-14 max-sm:w-80">
       <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
-      {'"'}{comment} <br /> <br />
+        {'"'}{comment}         <br /> <br />
         {comment2 && comment2} <br /> <br />
         {comment3 && comment3}{'"'}
       </p>

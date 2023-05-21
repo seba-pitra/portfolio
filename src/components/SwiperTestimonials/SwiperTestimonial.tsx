@@ -1,19 +1,21 @@
-import { A11y }         from 'swiper';
-import { EffectFade }   from 'swiper';
-import { Navigation }   from 'swiper';
-import { Pagination }   from 'swiper';
-import   React          from "react";
-import { Scrollbar }    from 'swiper';
-import { Swiper }       from 'swiper/react';
-import { SwiperSlide }  from 'swiper/react';
-import TestimonialCard  from '../TestimonialsCard/TestimonialCard';
-import { testimonials } from '../../database';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "./SwiperTestimonials.css";
+
+import { A11y }          from 'swiper';
+import { EffectFade }    from 'swiper';
+import { Navigation }    from 'swiper';
+import { Pagination }    from 'swiper';
+import   React           from "react";
+import { Scrollbar }     from 'swiper';
+import { Swiper }        from 'swiper/react';
+import { SwiperSlide }   from 'swiper/react';
+import { testimonials }  from '../../database';
+import { useScreenSize } from '../../hooks/UseScreenSize';
+import TestimonialCard   from '../TestimonialsCard/TestimonialCard';
+
 
 export interface ITestimonial {
   name:           string;
@@ -25,6 +27,8 @@ export interface ITestimonial {
 }
 
 const SwiperTestimonials: React.FC = () => {
+
+  const { width } =  useScreenSize();
 
   return (
     <div>
@@ -38,8 +42,7 @@ const SwiperTestimonials: React.FC = () => {
 
       <Swiper
         modules={[Navigation, EffectFade, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
-        slidesPerView={"auto"}
+        slidesPerView={width > 1024 ? 2 : 1}
         scrollbar={{ draggable: true }}
         effect={'coverflow'}
         grabCursor={true}
