@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface IProps {
+interface IProps {
   name:           string;
   comment:        string;
   comment2?:      string;
@@ -11,11 +11,13 @@ export interface IProps {
 
 const TestimonialCard: React.FC<IProps> = ({ name, comment, comment2, comment3, profilePicture, role }) => {
   return (
-    <div className="h-24 w-96 max-[600px]:-ml-[130px] max-sm:mt-[60%] mt-14 max-sm:w-80">
-      <p className=" bg-neutral-800 p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-64">
-        {'"'}{comment}         <br /> <br />
+    <div className="h-24 w-[500px] max-[1280px]:w-96 max-[540px]:mt-[30%] max-[400px]:mt-[75%] mt-14 ">
+      <p className=" bg-neutral-800  p-4 pb-16 font-montserrat rounded-skill-card max-sm:w-[98%]">
+        {'"'}
+        {comment}              <br /> <br />
         {comment2 && comment2} <br /> <br />
-        {comment3 && comment3}{'"'}
+        {comment3 && comment3}
+        {'"'}
       </p>
       <div className="flex">
         <img
