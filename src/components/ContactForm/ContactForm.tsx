@@ -3,7 +3,7 @@ import { useRef }        from "react";
 import { FC }            from "react";
 import { send }          from "emailjs-com"
 import { useForm }       from "react-hook-form"
-import { useOpacity }    from "../../hooks";
+import { useOpacity }    from "../../hooks/useOpacity";
 import { SubmitHandler } from "react-hook-form"
 import { toast }         from 'react-toastify';
 

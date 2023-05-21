@@ -3,7 +3,7 @@ import { Link }       from "react-router-dom";
 import { Linkedin }   from "react-bootstrap-icons"
 import { useRef }     from "react";
 import  React         from "react";
-import { useOpacity } from "../../hooks";
+import { useOpacity } from "../../hooks/useOpacity";
 
 const Presentation: React.FC = () => {
   const containerRef    = useRef<HTMLDivElement>(null);
