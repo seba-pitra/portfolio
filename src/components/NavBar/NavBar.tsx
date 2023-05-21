@@ -12,16 +12,16 @@ const NavBar: React.FC = () => {
   const handleOpacity = ():void => {
     setTimeout(():void => {
       if(homeRef.current) {
-        homeRef.current.className = `relative ml-8 opacity-100 duration-[1.4s] ease-in-out`;
+        homeRef.current.className = `relative ml-8 max-sm:ml-0 opacity-100 duration-[1.4s] ease-in-out`;
       }
       if(projectsRef.current) {
-        projectsRef.current.className = `relative ml-8 opacity-100 duration-[1.1s] ease-in-out`;
+        projectsRef.current.className = `relative ml-8 max-sm:ml-0 opacity-100 duration-[1.1s] ease-in-out`;
       } 
       if(contactRef.current) {
-        contactRef.current.className  = `relative ml-8 opacity-100 duration-[0.8s] ease-in-out`;
+        contactRef.current.className  = `relative ml-8 max-sm:ml-0 opacity-100 duration-[0.8s] ease-in-out`;
       } 
       if(resumeRef.current) {
-        resumeRef.current.className  = `relative ml-8 opacity-100 duration-[0.5s] ease-in-out`;
+        resumeRef.current.className  = `relative ml-8 max-sm:ml-0 opacity-100 duration-[0.5s] ease-in-out`;
       } 
     }, 1000)
   }
@@ -31,9 +31,9 @@ const NavBar: React.FC = () => {
   }, [])
 
   return (
-    <nav className=" mt-9 p-0 max-sm:mr-5">
-      <ul className=" m-0 p-0 flex justify-end  max-sm:w-full  w-11/12 list-none">
-        <li  ref={homeRef} className="relative ml-8 opacity-0 -translate-y-8">
+    <nav className=" mt-9 p-0 ">
+      <ul className=" m-0 p-0 flex justify-end  max-sm:w-full max-sm:justify-evenly  max-sm:pt-0 w-11/12 list-none">
+        <li  ref={homeRef} className="relative opacity-0 -translate-y-8">
           <Link className=" text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -41,7 +41,7 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li ref={projectsRef} className="relative ml-8 opacity-0 -translate-y-8">
+        <li ref={projectsRef} className="relative opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -49,7 +49,7 @@ const NavBar: React.FC = () => {
             Projects
           </Link>
         </li>
-        <li ref={contactRef} className="relative ml-8 opacity-0 -translate-y-8">
+        <li ref={contactRef} className="relative opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -57,7 +57,7 @@ const NavBar: React.FC = () => {
             Contact
           </Link>
         </li>
-        <li ref={resumeRef} className="relative ml-8 opacity-0 -translate-y-8">
+        <li ref={resumeRef} className="relative opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
@@ -66,7 +66,6 @@ const NavBar: React.FC = () => {
           </Link>
         </li>
       </ul>
-      <i className="bi bi-list mobile-nav-toggle"></i>
     </nav>
   );
 };
