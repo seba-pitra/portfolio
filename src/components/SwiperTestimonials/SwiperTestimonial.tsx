@@ -13,7 +13,7 @@ import { Scrollbar }     from 'swiper';
 import { Swiper }        from 'swiper/react';
 import { SwiperSlide }   from 'swiper/react';
 import { testimonials }  from '../../database';
-import { useScreenSize } from '../../hooks/UseScreenSize';
+import { useScreenSize } from '../../hooks';
 import TestimonialCard   from '../TestimonialsCards/TestimonialCard';
 
 
