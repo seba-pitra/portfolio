@@ -4,7 +4,7 @@ import { Link }           from "react-router-dom";
 import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
-import { useScroll }      from "../../hooks/useOpacity";
+import { useScroll }      from "../../hooks";
 
 interface IProps {
   title:        string;
@@ -21,30 +21,13 @@ const AlignRightProjectCard: React.FC<IProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const {doScroll} = useScroll()
 
-  useEffect((): () => void => {
-    window.addEventListener("scroll", () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useScroll({
-        references: [{ 
-          reference: cardRef,
-          classNameProperties: "flex gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
-        }]
-      })
-    });
+  useEffect(() => {
 
-    return ():void => {
-      window.removeEventListener("scroll", () => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useScroll({
-          references: [{ 
-            reference: cardRef,
-            classNameProperties: "flex gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
-          }]
-        })
-      });
-    };
-  }, []);
+      window.addEventListener("scroll", () => doScroll([cardRef] ))
+
+  }, [doScroll]);
 
   return (
     <div className="max-w-3xl mt-4 -ml-[150px] max-lg:-ml-0 ">
