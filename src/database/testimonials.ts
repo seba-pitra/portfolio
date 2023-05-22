@@ -40,17 +40,17 @@ export const testimonials: Array<ITestimonial> =  [
   },
   {
     name:     "Francisco Schlatter",
-    comment:  "Working with Sebastian was an amazing experience. His technical knowledge and development skills are outstanding. ",
-    comment2: "He always gives his best to deliver exceptional results and exceed expectations.",
-    comment3: "His ability to solve complex problems efficiently and his positive attitude make him a reliable collaborator.",
+    comment:  "Working with Sebastian was an amazing experience. His technical knowledge and development skills are outstanding",
+    comment2: "He consistently goes above and beyond to deliver exceptional results, consistently exceeding expectations.",
+    comment3: "Sebastian's ability to efficiently solve complex problems, coupled with his positive attitude, makes him a highly reliable collaborator.",
     role:     "Full Stack Developer",
     profilePicture: franImage
   },
   {
     name:     "Lucas Pedreira",
-    comment:  "I had the opportunity to work closely with Sebastian and I must say that the experience was very positive.",
-    comment2: "He is always willing to help, give advice and receive it too.",
-    comment3: "He is a professional who shows that he likes what he does and dedicates the best of himself to it.",
+    comment:  "I had the oportunity of working closely with Sebastian, and I can say that it was a very positive experience. ",
+    comment2: "He consistently demonstrated his willingness to assist others, provide valuable advice, and be open to receiving feedback as well. His passion for his work shines through, and he consistently dedicates himself wholeheartedly to every task.",
+    comment3: "He is a valuable asset to any team or project.",
     role:     "Freelance Developer",
     profilePicture: lucasImage
   },

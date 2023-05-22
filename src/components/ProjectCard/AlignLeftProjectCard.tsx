@@ -5,7 +5,6 @@ import  React             from "react";
 import { useEffect }      from "react";
 import { useRef }         from "react";
 import { useScroll }      from "../../hooks";
-import { useOpacity }     from "../../hooks";
 
 interface IProps {
   title:        string;
@@ -21,42 +20,20 @@ const AlignLeftProjectCard: React.FC<IProps> = ({
   title, isFirstItem, image, description, techStack, urlGithub, urlDeploy 
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const {doScroll} = useScroll()
 
-  if(isFirstItem) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useOpacity({
-      miliseconds: 1000,
-      references: [{
-        reference: cardRef,
-        classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center"
-      }]
-    })
-  }
+  useEffect(() => {
+    
+    if(isFirstItem) {
+      setTimeout(() => {
+        const elementReference = cardRef.current;
+        if(elementReference) elementReference.className += `flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center opacity-100 duration-[0.5s] ease-in-out translate-y-0`
+      }, 1000)
+    }
 
-  useEffect((): () => void => {
-    window.addEventListener("scroll", () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useScroll({
-        references: [{ 
-          reference: cardRef,
-          classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
-        }]
-      })
-    });
+    window.addEventListener("scroll", () => doScroll([cardRef] ) )
 
-    return ():void => {
-      window.removeEventListener("scroll", () => {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        useScroll({
-          references: [{ 
-            reference: cardRef,
-            classNameProperties: "flex relative gap-5 h-96 w-[70%] max-lg:w-full  max-lg:relative max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center" 
-          }]
-        })
-      });
-    };
-
-  }, [isFirstItem]);
+  }, [isFirstItem, doScroll]);
   
   return (
     <div className="  max-w-3xl -ml-[150px] max-lg:-ml-0 transition-opacity opacity-100 duration-[1s] ease-in-out">
@@ -91,7 +68,7 @@ const AlignLeftProjectCard: React.FC<IProps> = ({
               }
             </div>
           </div>
-          </div>
+        </div>
   
         {image && <img src={image} alt="project-img" className=" ml-[75%]  w-[100vh] h-[3%] rounded-skill-card max-lg:hidden"/>}
   

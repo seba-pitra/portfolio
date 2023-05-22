@@ -1,19 +1,21 @@
-import { A11y }         from 'swiper';
-import { EffectFade }   from 'swiper';
-import { Navigation }   from 'swiper';
-import { Pagination }   from 'swiper';
-import   React          from "react";
-import { Scrollbar }    from 'swiper';
-import { Swiper }       from 'swiper/react';
-import { SwiperSlide }  from 'swiper/react';
-import TestimonialCard  from '../TestimonialsCard/TestimonialCard';
-import { testimonials } from '../../database';
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "./SwiperTestimonials.css";
+
+import { A11y }          from 'swiper';
+import { EffectFade }    from 'swiper';
+import { Navigation }    from 'swiper';
+import { Pagination }    from 'swiper';
+import   React           from "react";
+import { Scrollbar }     from 'swiper';
+import { Swiper }        from 'swiper/react';
+import { SwiperSlide }   from 'swiper/react';
+import { testimonials }  from '../../database';
+import { useScreenSize } from '../../hooks';
+import TestimonialCard   from '../TestimonialsCards/TestimonialCard';
+
 
 export interface ITestimonial {
   name:           string;
@@ -26,6 +28,8 @@ export interface ITestimonial {
 
 const SwiperTestimonials: React.FC = () => {
 
+  const { width } =  useScreenSize();
+
   return (
     <div>
       <h2
@@ -37,21 +41,17 @@ const SwiperTestimonials: React.FC = () => {
       </h2>
 
       <Swiper
-        modules={[Navigation, EffectFade, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
-        slidesPerView={"auto"}
+        modules={ [Navigation, EffectFade, Pagination, Scrollbar, A11y] }
+        slidesPerView={width > 990 ? 2 : 1}
         scrollbar={{ draggable: true }}
         effect={'coverflow'}
         grabCursor={true}
-        pagination={{ el: '.swiper-pagination', clickable: true }}
-        navigation={{
-          nextEl: "none",
-          prevEl: 'none',
-        }} 
-        className=' w-4/5 mt-8 mb-0 ml-auto mr-auto '>
+        pagination={ { el: '.swiper-pagination', clickable: true }}
+        navigation={ { nextEl: "none", prevEl: 'none' } } 
+        className=' w-full mt-8 mb-0 ml-auto mr-auto '>
 
           {testimonials.length && testimonials.map((testimonial): any => 
-            <SwiperSlide>
+            <SwiperSlide className=' w-[28rem] h-[400px] flex items-center justify-center'>
               <TestimonialCard 
               name={testimonial.name}
               comment={testimonial.comment}
@@ -62,7 +62,7 @@ const SwiperTestimonials: React.FC = () => {
             </SwiperSlide>
           )}
 
-        <div className="relative bottom-8 flex items-center justify-center mt-28 max-sm:mt-[90%] ">
+        <div className="relative bottom-8 flex items-center justify-center mt-28 max-[540px]:mt-[150px] max-[405px]:mt-[280px]">
           <div className="swiper-pagination"></div>
         </div>
       </Swiper>

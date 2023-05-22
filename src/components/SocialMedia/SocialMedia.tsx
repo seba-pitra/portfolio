@@ -1,12 +1,14 @@
-import React            from "react";
-import { useEffect }    from "react";
-import { useRef }       from "react";
+import  React           from "react";
 import { EnvelopeFill } from "react-bootstrap-icons"
 import { GeoAltFill  }  from "react-bootstrap-icons"
-import { Globe }        from "react-bootstrap-icons"
-import { Linkedin }     from "react-bootstrap-icons"
 import { Github }       from "react-bootstrap-icons"
+import { Globe }        from "react-bootstrap-icons"
 import { Link }         from "react-router-dom"
+import { Linkedin }     from "react-bootstrap-icons"
+import { useEffect }    from "react";
+import { useOpacity }   from "../../hooks";
+import { useRef }       from "react";
+import { useState }     from "react";
 
 const SocialMedia = () => {
   const emailIconRef    = useRef<HTMLDivElement>(null);
@@ -15,35 +17,17 @@ const SocialMedia = () => {
   const githubIconRef   = useRef<HTMLDivElement>(null);
   const linkedinIconRef = useRef<HTMLDivElement>(null);
 
-  const handleOpacity = () => {
-    const emailElement    :HTMLDivElement = emailIconRef.current    as HTMLDivElement;
-    const locationElement :HTMLDivElement = locationIconRef.current as HTMLDivElement;
-    const webElement      :HTMLDivElement = webIconRef.current      as HTMLDivElement;
-    const githubElement   :HTMLDivElement = githubIconRef.current   as HTMLDivElement;
-    const linkedinElement :HTMLDivElement = linkedinIconRef.current as HTMLDivElement;
+  const [ references ] = useState(
+    [emailIconRef, locationIconRef, webIconRef, githubIconRef, linkedinIconRef]
+  )
 
-    setTimeout(() => {
-      if(emailElement) {
-        emailElement.className = ` opacity-100 duration-[0.3s] ease-in-out flex gap-3 items-center`;
-      } 
-      if(locationElement) {
-        locationElement.className = `opacity-100 duration-[0.5s] ease-in-out flex gap-3 items-center`;
-      }
-      if(webElement) {
-        webElement.className = `opacity-100 duration-[0.8s] ease-in-out flex gap-3 items-center`;
-      } 
-      if(githubElement) {
-        githubElement.className  = `opacity-100 duration-[1.1s] ease-in-out flex gap-3 items-center`;
-      } 
-      if(linkedinElement) {
-        linkedinElement.className  = `opacity-100 duration-[1.3s] ease-in-out flex gap-3 items-center`;
-      } 
-    }, 1700)
-  }
+  const { doOpacity } = useOpacity();
 
   useEffect(() => {
-    handleOpacity()
-  }, [])
+
+    setTimeout(() => doOpacity(references), 1700)
+
+  }, [doOpacity, references])
 
   return (
     <div className="flex flex-col gap-10">
