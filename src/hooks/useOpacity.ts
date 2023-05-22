@@ -1,32 +1,21 @@
-interface IReference {
-  reference: any,
-  classNameProperties?: string,
-}
 
-interface IParams {
-  references: Array<IReference>;
-  miliseconds?: number;
-} 
+export const useOpacity = () => {
+  
+  const doOpacity = (references: any) => {
 
-export const useOpacity = ({ references, miliseconds }: IParams): void => {
-  setTimeout(():void => {
-    references.forEach((reference) => {
-      const elementReference: HTMLElement = reference.reference.current;
-
+    references.forEach((ref:any, index: number) => {
+      const elementReference: HTMLElement = ref.current;
+      const miliseconds = Number.parseInt(index + "15");
+      
       if(elementReference) {
-        elementReference.className = `opacity-100 duration-[0.5s] ease-in-out ${reference.classNameProperties} `;
-      } 
-    })
-  }, miliseconds)
+        setInterval(() =>  {
+          elementReference.className = `opacity-100 duration-[0.5s] ease-in-out translate-y-0`
+        }, miliseconds)
+      }
+    });
+
+  }
+
+  return { doOpacity }
 };
 
-
-export const useScroll = ({ references }: IParams): void => {
-  references.forEach(reference => {
-    const element: HTMLDivElement = reference.reference.current;
-
-    if(element && element.getBoundingClientRect().top < window.innerHeight) {
-      element.className = `opacity-100 duration-[1s] ease-in-out ${reference.classNameProperties}`;
-    } 
-  })
-};
