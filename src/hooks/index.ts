@@ -1,3 +1,9 @@
-export { useOpacity } from "./useOpacity"
-export { useScreenSize } from "./UseScreenSize"
-export { useScroll } from "./UseScroll"
+import { useOpacity }    from "./useOpacityHook"
+import { useScreenSize } from "./UseScreenSizeHook"
+import { useScroll }     from "./UseScrollHook"
+
+export {
+  useOpacity,
+  useScreenSize, 
+  useScroll
+} 
