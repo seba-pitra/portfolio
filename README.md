@@ -32,7 +32,6 @@ This is an example of how you may give instructions on setting up your project l
 ```
 git clone https://github.com/seba-pitra/portfolio.git
 ```
-#### In API & CLIENT folders:
 2. To Install dependencies:
 ```
 npm install
