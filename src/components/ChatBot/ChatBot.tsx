@@ -8,6 +8,7 @@ import Rocket        from "./Rocket";
 import { useState }  from "react";
 import { useEffect } from "react";
 import { useRef }    from "react";
+import { useOpacity } from "../../hooks";
 
 
 interface IMessages {
@@ -31,14 +32,14 @@ const ChatBot: FC = () => {
     }
   ]);
 
-  useEffect((): void => {
-    !isSelected && setTimeout(() => {
-      if(rocketContainerRef.current) {
-        rocketContainerRef.current.className = ` opacity-100 duration-[0.7s] ease-in-out `;
-      } 
-    }, 2000);
+  const [ references ] = useState([rocketContainerRef]);
+  const { doOpacity }  = useOpacity();
 
-  }, [isSelected]);
+  useEffect(() => {
+
+    setTimeout(() => doOpacity(references), 2000)
+
+  }, [doOpacity, references])
 
 
   const handleOpenChat = (): void => {
