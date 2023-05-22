@@ -1,8 +1,9 @@
-import tomasImage   from "../assets/img/tomas.jpg";
-import josueImage   from "../assets/img/josue.jpg";
-import lucasImage   from "../assets/img/lucas.png";
-import ayrtonImage  from "../assets/img/ayrton.jpg"
-import franImage    from "../assets/img/fran.png";
+import tomasImage    from "../assets/img/tomas.jpg";
+import josueImage    from "../assets/img/josue.jpg";
+import lucasImage    from "../assets/img/lucas.png";
+import ayrtonImage   from "../assets/img/ayrton.jpg"
+import franImage     from "../assets/img/fran.png";
+import milagrosImage from "../assets/img/milagros.jpg";
 
 export interface ITestimonial {
   name:           string;
@@ -21,6 +22,14 @@ export const testimonials: Array<ITestimonial> =  [
     comment3: "In addition to his technical skills, he stands out for his communication skills, which makes him a valuable asset to any project or development team.",
     role:     "Industrial Engineer",
     profilePicture: josueImage
+  },
+  {
+    name:     "Milagros Molina",
+    comment:  "Sebastian has been a remarkable team member throughout our time working together on the projects.",
+    comment2: "He consistently demonstrates a willingness to help others, whether it's providing technical support, sharing his knowledge, or taking on additional tasks when needed.",
+    comment3: "Sebastian consistently meets deadlines and achieves set goals, demonstrating his professionalism and dedication to his work.",
+    role:     "Project Manager",
+    profilePicture: milagrosImage
   },
   {
     name:     "Ayrton Juarez",
