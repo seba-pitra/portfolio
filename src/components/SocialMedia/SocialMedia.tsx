@@ -31,32 +31,48 @@ const SocialMedia = () => {
 
   return (
     <div className="flex flex-col gap-10">
+
       <div ref={emailIconRef} className=" opacity-0 translate-x-8">
-        <EnvelopeFill color="#3498db" size={"25px"}/>
-        <span>Email - sebastian.pitra10@gmail.com</span>
+        <div className="flex gap-2">
+          <EnvelopeFill color="#3498db" size={"25px"}/>
+          <span>Email - sebastian.pitra10@gmail.com</span>
+        </div>
       </div>
+
       <div ref={locationIconRef} className="opacity-0 translate-x-8">
-        <GeoAltFill  color="#3498db" size={"25px"}/>
-        <span>Location - Misiones, Argentina</span>
+        <div className="flex gap-2">
+          <GeoAltFill  color="#3498db" size={"25px"}/>
+          <span>Location - Misiones, Argentina</span>
+        </div>
       </div>
+
       <div ref={webIconRef} className="opacity-0 translate-x-8">
-        <Globe color="#3498db" size={"25px"}/>
-        <Link to={"https://sebastian-pitra.vercel.app/"} target="_blank">
-          <span>Website</span>
-        </Link>
+        <div className="flex gap-2">
+          <Globe color="#3498db" size={"25px"}/>
+          <Link to={"https://sebastian-pitra.vercel.app/"} target="_blank">
+            <span>Website</span>
+          </Link>
+        </div>
       </div>
+
       <div ref={githubIconRef} className="opacity-0 translate-x-8">
-        <Github color="#3498db" size={"25px"}/>
-        <Link to={"https://github.com/seba-pitra"} target="_blank" >
-          Github
-        </Link>
+        <div className="flex gap-2">
+          <Github color="#3498db" size={"25px"}/>
+          <Link to={"https://github.com/seba-pitra"} target="_blank" >
+            Github
+          </Link>
+        </div>
       </div>
+
       <div ref={linkedinIconRef} className="opacity-0 translate-x-8">
-        <Linkedin color="#3498db" size={"25px"}/>
-        <Link to={"https://www.linkedin.com/in/sebastian-pitra/"} target="_blank" >
-          Linkedin
-        </Link>
+        <div className="flex gap-2">
+          <Linkedin color="#3498db" size={"25px"}/>
+          <Link to={"https://www.linkedin.com/in/sebastian-pitra/"} target="_blank" >
+            Linkedin
+          </Link>
+        </div>
       </div>
+
     </div>
   )
 }
