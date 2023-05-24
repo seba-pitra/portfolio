@@ -10,4 +10,4 @@ interface IProps {
   urlGithub?:   string;
 }
 
-export const ProjectCardLeftContext = createContext<IProps>({} as IProps);
+export const ProjectCardContext = createContext<IProps>({} as IProps);

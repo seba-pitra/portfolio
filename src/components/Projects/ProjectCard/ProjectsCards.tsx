@@ -1,4 +1,4 @@
-import AlignLeftProjectCard  from "./AlignLeftProjectCard/AlignLeftProjectCard";
+import AlignLeftProjectCard  from "./AlignLeftProjectCard";
 import AlignRightProjectCard from "./AlignRightProjectCard";
 
 import React from 'react'
