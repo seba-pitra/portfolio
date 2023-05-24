@@ -2,31 +2,31 @@ import   React        from 'react';
 import { useEffect }  from 'react';
 import { useRef }     from 'react';
 import { useContext } from 'react';
+import { useScroll }  from '../../../../hooks';
 //---Components
-import { useScroll } from '../../../../hooks';
-import { ProjectCardLeftImage } from './ProjectCardRightImage';
-import { ProjectCardHeader } from '../ProjectCardHeader';
-import { ProjectCardRightTitle } from './ProjectCardRightTitle';
+import { ProjectCardLeftImage }        from './ProjectCardRightImage';
+import { ProjectCardHeader }           from '../ProjectCardHeader';
+import { ProjectCardRightTitle }       from './ProjectCardRightTitle';
 import { ProjectCardRightDescription } from './ProjectCardRightDescription';
-import { ProjectCardRightTechSkills } from './ProjectCardRightTechSkills';
+import { ProjectCardRightTechSkills }  from './ProjectCardRightTechSkills';
 import { ProjectCardRightSocialMedia } from './ProjectCardRightSocialMedia';
-import { ProjectCardContext } from '../context';
 //---Context
+import { ProjectCardContext } from '../context';
 
 
 
 export const ProjectCardRightContent = () => {
 
-  const projectCardContext = useContext(ProjectCardContext)
+  const projectCardContext = useContext(ProjectCardContext);
 
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef      = useRef<HTMLDivElement>(null);
+  const { doScroll } = useScroll();
 
-  const { doScroll } = useScroll()
 
   useEffect(() => {
 
-      window.addEventListener("scroll", () => doScroll([cardRef] ))
-
+    window.addEventListener("scroll", () => doScroll([cardRef] ))
+    
   }, [doScroll]);
 
   return (

@@ -1,6 +1,7 @@
-import React from 'react'
-import { BoxArrowUpRight, Github } from 'react-bootstrap-icons'
-import { Link } from 'react-router-dom'
+import React               from 'react'
+import {  Github }         from 'react-bootstrap-icons'
+import { BoxArrowUpRight } from 'react-bootstrap-icons'
+import { Link }            from 'react-router-dom'
 
 interface Props {
   urlGithub?: string;

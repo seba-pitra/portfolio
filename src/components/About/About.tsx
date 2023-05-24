@@ -2,9 +2,9 @@ import React            from "react";
 import { ReactElement } from "react";
 //--Components
 import { AboutDescriptionContainer } from "./AboutDescriptionContainer";
-import { AboutHeader }             from "./AboutHeader";
-import { AboutSkillsCards }        from "./AboutSkillsCards";
-import { AboutTestimonials }       from "./AboutTestimonials";
+import { AboutHeader }               from "./AboutHeader";
+import { AboutSkillsCards }          from "./AboutSkillsCards";
+import { AboutTestimonials }         from "./AboutTestimonials";
 //--Hooks
 import { useEffect } from "react";
 import { useRef }    from "react";

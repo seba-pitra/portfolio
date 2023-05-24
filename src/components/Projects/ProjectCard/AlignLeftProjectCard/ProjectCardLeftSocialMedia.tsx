@@ -1,6 +1,7 @@
-import React from 'react'
-import { BoxArrowUpRight, Github } from 'react-bootstrap-icons'
-import { Link } from 'react-router-dom'
+import React               from 'react'
+import { BoxArrowUpRight } from 'react-bootstrap-icons'
+import { Github }          from 'react-bootstrap-icons'
+import { Link }            from 'react-router-dom'
 
 interface Props {
   urlGithub?: string;
@@ -24,6 +25,7 @@ export const ProjectCardLeftSocialMedia = ({ urlGithub, urlDeploy }: Props) => {
           <BoxArrowUpRight size={"25px"} className=" hover:text-blue-400 cursor-pointer transition-animationLineBefore" />
         </Link>
       }
+      
     </div>
   )
 }

@@ -1,6 +1,7 @@
-import React from 'react'
-import { Github, Linkedin } from 'react-bootstrap-icons'
-import { Link } from 'react-router-dom'
+import React        from 'react'
+import { Github }   from 'react-bootstrap-icons'
+import { Link }     from 'react-router-dom'
+import { Linkedin } from 'react-bootstrap-icons'
 
 export const AboutSocialMedia = () => {
   return (

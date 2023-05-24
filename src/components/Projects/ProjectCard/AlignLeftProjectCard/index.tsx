@@ -1,13 +1,13 @@
-import  React        from "react";
+import  React from "react";
+import { ProjectCardContext }     from "../context";
 import { ProjectCardLeftContent } from "./ProjectCardLeftContent";
-import { ProjectCardContext } from "../context";
 
 interface IProps {
-  title:        string;
-  image:        string;
   description:  string;
-  techStack:    Array<string>;
+  image:        string;
   isFirstItem?: boolean;
+  techStack:    Array<string>;
+  title:        string;
   urlDeploy?:   string;
   urlGithub?:   string;
 }

@@ -1,13 +1,13 @@
 
-import  React, { ReactElement } from "react";
+import   React            from "react";
+import { ReactElement }   from "react";
 import { ProjectsHeader } from "./ProjectsHeader";
-import { ProjectsCards } from "./ProjectCard/ProjectsCards";
+import { ProjectsCards }  from "./ProjectCard/ProjectsCards";
 
 
 interface Props {
   children?: ReactElement | ReactElement[];
 }
-
 
 const ProjectsComponent = ({ children }: Props) => {
 
@@ -22,5 +22,7 @@ const ProjectsComponent = ({ children }: Props) => {
 
 ProjectsComponent.Header        = ProjectsHeader;
 ProjectsComponent.ProjectsCards = ProjectsCards;
+
+
 
 export default ProjectsComponent;

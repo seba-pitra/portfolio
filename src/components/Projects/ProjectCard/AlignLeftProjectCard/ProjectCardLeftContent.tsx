@@ -1,33 +1,33 @@
-import   React, { useEffect, useRef }        from 'react';
+import   React        from 'react';
 import { useContext } from 'react';
+import { useEffect }  from 'react';
+import { useRef }     from 'react';
+import * as hooks     from "../../../../hooks";
 //---Components
+import { ProjectCardHeader }          from "../ProjectCardHeader";
+import { ProjectCardLeftDescription } from "./ProjectCardLeftDescription";
+import { ProjectCardLeftImage }       from "./ProjectCardLeftImage";
 import { ProjectCardLeftSocialMedia } from "./ProjectCardLeftSocialMedia";
 import { ProjectCardLeftTechSkills }  from "./ProjectCardLeftTechSkills";
 import { ProjectCardLeftTitle }       from "./ProjectCardLeftTitle";
-import { ProjectCardLeftDescription } from "./ProjectCardLeftDescription";
-import { ProjectCardHeader }          from "../ProjectCardHeader";
-import { ProjectCardLeftImage }       from "./ProjectCardLeftImage";
 //---Context
 import { ProjectCardContext }     from '../context';
-import * as hooks    from "../../../../hooks";
 
 
 export const ProjectCardLeftContent = () => {
 
   const projectCardContext = useContext(ProjectCardContext);
-  const {isFirstItem} = useContext(ProjectCardContext);
+  const { isFirstItem }    = useContext(ProjectCardContext);
+  const { doScroll }       = hooks.useScroll();
+  const { doOpacity }      = hooks.useOpacity();
 
-  const   cardRef     = useRef<HTMLDivElement>(null);
-  const { doScroll }  = hooks.useScroll();
-  const { doOpacity } = hooks.useOpacity();
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     
-    if(isFirstItem) {
-      setTimeout(() => doOpacity([cardRef]), 1000)
-    }
-
-    window.addEventListener("scroll", () => doScroll([ cardRef ]) )
+    if(isFirstItem) setTimeout(() => doOpacity([cardRef]), 1000);
+    
+    window.addEventListener("scroll", () => doScroll([ cardRef ]) );
 
   }, [isFirstItem, doScroll, doOpacity]);
 
