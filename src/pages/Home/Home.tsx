@@ -6,7 +6,13 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Presentation />
+      <Presentation>
+        <Presentation.Introducing />
+        <Presentation.Name />
+        <Presentation.WhoAmI />
+        <Presentation.Description />
+        <Presentation.SocialMedia />
+      </Presentation>
       <About />
     </>
   )
