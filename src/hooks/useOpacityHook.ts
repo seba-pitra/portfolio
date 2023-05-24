@@ -9,7 +9,7 @@ export const useOpacity = () => {
       
       if(elementReference) {
         setInterval(() =>  {
-          elementReference.className = `opacity-100 duration-[0.5s] ease-in-out translate-y-0`
+          elementReference.className = `${elementReference.className} opacity-100 duration-[0.5s] ease-in-out translate-y-0`
         }, miliseconds)
       }
     });
