@@ -13,7 +13,13 @@ const Home: React.FC = () => {
         <Presentation.Description />
         <Presentation.SocialMedia />
       </Presentation>
-      <About />
+
+      <About>
+        <About.Header />
+        <About.Description />
+        <About.SkillsCards />
+        <About.Testimonials />
+      </About>
     </>
   )
 }
