@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
             <Route path='/'         element={ <Home />      } />
             <Route path="/resume"   element={ <PDFResume /> } />
             <Route path='/projects' element={ <Projects />  } />
-            <Route path='/contact'  element={ <Contact />   } />
+            {/* <Route path='/contact'  element={ <Contact />   } /> */}
           </Routes>
           
         </div>

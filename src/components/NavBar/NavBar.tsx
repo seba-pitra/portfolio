@@ -49,14 +49,14 @@ const NavBar: React.FC = () => {
             Projects
           </Link>
         </li>
-        <li ref={contactRef} className="relative opacity-0 -translate-y-8">
+        {/* <li ref={contactRef} className="relative opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
           before:bg-blue-400 before:transition-animationLineBefore 
           hover:before:visible hover:before:w-6 hover:text-neutral-50" to={"/contact"}>
             Contact
           </Link>
-        </li>
+        </li> */}
         <li ref={resumeRef} className="relative opacity-0 -translate-y-8">
           <Link className="text-neutral-300 flex items-center justify-between p-0 text-xl max-sm:text-base font-normal duration-300 
           before:absolute before:w-0 before:h-line-title before:-bottom-1 before:left-0 
