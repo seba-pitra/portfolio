@@ -18,7 +18,7 @@ const Navigation: React.FC = () => {
       <BrowserRouter>
         <div className='relative'>
           <NavBar />
-          <ChatBot />
+          {/* <ChatBot /> */}
 
           <Routes>
             <Route path='/*'        element={ <Navigate to={"/"} replace /> } />
