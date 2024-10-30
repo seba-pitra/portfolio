@@ -8,6 +8,7 @@ import { useScroll }      from "../../hooks";
 
 interface IProps {
   title:        string;
+  subtitle?:        string;
   image:        string;
   description:  string;
   techStack:    Array<string>;
@@ -17,7 +18,7 @@ interface IProps {
 }
 
 const AlignLeftProjectCard: React.FC<IProps> = ({ 
-  title, isFirstItem, image, description, techStack, urlGithub, urlDeploy 
+  title, subtitle, isFirstItem, image, description, techStack, urlGithub, urlDeploy 
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const {doScroll} = useScroll()
@@ -43,6 +44,8 @@ const AlignLeftProjectCard: React.FC<IProps> = ({
           <div className="absolute max-lg:static">
             <h1 className=" text-base text-blue-400 w-fit">Featured Project</h1>
             <h1 className=" text-2xl mt-1 top-[50px] left-0 right-0 bottom-0 max-h-fit w-fit">{title}</h1>
+            <h3 className=" text-1xl mt-1 top-[50px] left-0 right-0 bottom-0 max-h-fit w-fit">{subtitle}</h3>
+            
             <p className="  bg-blue-950 top-[200px] left-0 right-0 bottom-0 max-h-fit p-5 max-lg:-mr-0 -mr-[25%] rounded-skill-card min-w-[400px] max-lg:min-w-fit mt-2 max-lg:-ml-0 max-md:max-h-fit">
               {description}
             </p>

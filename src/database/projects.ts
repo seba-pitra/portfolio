@@ -1,10 +1,11 @@
 import coninImage from "../assets/img/conin.jpg";
-import dogBreedsImage from "../assets/img/dog-breeds.jpg";
-import portamorImage from "../assets/img/portamor.jpg";
-import nonFungibleTownImage from "../assets/img/nonFungibleTown.jpg";
+import ingenesImage from "../assets/img/ingenes.jpg";
+import surrogacyImage from "../assets/img/surrogacy-ingenes.jpg";
+
 
 export interface IProject {
   title: string;
+  subtitle?: string;
   image: string;
   description: string;
   techStack: Array<string>;
@@ -15,34 +16,29 @@ export interface IProject {
 
 export const projects: Array<IProject> = [
   {
+    title: "Ingenes",
+    subtitle: "More & Surrogacy",
+    image: surrogacyImage,
+    description:
+      "Built a scheduling system for two new services, More and Surrogacy, designed to meet international standards and reach new markets like Europe. This involved adapting workflows and aligning with different cultural and regulatory requirements, expanding the company's global presence",
+    techStack: ["Node", "Javascript", "Typescript", "Nest", "MySQL", "MongoDB"],
+    urlDeploy: "https://www.ingenes.com/en/our-services/surrogacy/",
+  },
+  {
+    title: "Ingenes",
+    subtitle: "Fertility",
+    image: ingenesImage,
+    description:
+      "Scheduling system that allows users to manage their medical appointments or get assistance from the contact center. This system was successfully launched in 21 branches across Mexico and the United States, making medical services more accessible to users",
+    techStack: ["Node", "Javascript", "Typescript", "Nest", "MySQL", "MongoDB"],
+    urlDeploy: "https://www.ingenes.com/en/",
+  },
+  {
     title: "CONIN SMT",
     image: coninImage,
     description:
       "High-impact social project aimed at combating child malnutrition in Argentina. It allows users to make donations through Mercado Pago, in order to provide food and necessary resources to improve the health and well-being of affected children.",
-    techStack: ["Javascript", "React", "Firebase", "NodeJS", "Mercado Pago"],
+    techStack: ["Javascript", "React", "Firebase", "NodeJS", "Express", "SCRUM" , "Git", "Mercado Pago", ],
     urlDeploy: "https://embajadores-conin.vercel.app/",
-  },
-  {
-    title: "Portamor",
-    image: portamorImage,
-    description:
-      "Project focused on promoting active aging among individuals through the implementation of an online education platform in Peru. This platform provides learning opportunities and personal development to the elderly population.",
-    techStack: ["Javascript", "React", "NodeJS", "PostgreSQL"],
-  },
-  {
-    title: "Non Fungible Town",
-    image: nonFungibleTownImage,
-    description:
-      "An NFT Ecommerce platform that provides seamless opportunities for buying and selling NFTs using cryptocurrencies as well as cash payments.",
-    techStack: ["Javascript", "React", "Metamask", "NodeJS", "Firebase"],
-    urlGithub: "https://github.com/seba-pitra/e-commerce-NFT",
-  },
-  {
-    title: "Dog Breeds",
-    image: dogBreedsImage,
-    description:
-      "User-friendly Single-Page-App that integrated an external dog breed API. The app empowered users to effortlessly filter, sort, and even create new dog breeds, complemented by a seamless pagination feature. This enhanced user experience enabled seamless exploration of a diverse range of dog breeds.",
-    techStack: ["Javascript", "React", "Redux", "NodeJS", "PostgreSQL"],
-    urlGithub: "https://github.com/seba-pitra/PI-DOGS",
   },
 ];

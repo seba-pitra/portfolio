@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
             after:mt-1 after:mb-1 after:ml-1 after:mr-1  " >
               Projects
             </h2>
-            <div className="w-full mt-16 flex flex-col items-center gap-24">
+            <div className="w-full mt-16 flex flex-col items-center gap-40">
               {
                 projects.map((project, index) => 
                   index % 2 === 0 ? 
@@ -22,6 +22,7 @@ const Projects: React.FC = () => {
                   key={index}
                   isFirstItem={index === 0}
                   title={project.title} 
+                  subtitle={project.subtitle ? project.subtitle : ''} 
                   image={project.image}
                   description={project.description} 
                   techStack={project.techStack} 
@@ -31,6 +32,7 @@ const Projects: React.FC = () => {
                   <AlignRightProjectCard 
                   key={index}
                   title={project.title} 
+                  subtitle={project.subtitle ? project.subtitle : ''} 
                   image={project.image}
                   description={project.description} 
                   techStack={project.techStack} 
